@@ -1,0 +1,42 @@
+{
+  "pages": [
+    "pages/login/main",
+    "pages/home/main",    
+    "pages/device_info/main",
+    "pages/device_introduce/main",
+    "pages/contacts/main",
+    "pages/device_record_details/main",
+    "pages/device_remark_details/main",
+    "pages/device_add_remark/main",
+    "pages/device/main",
+    "pages/add_yh/main",
+    "pages/team/main",
+    "pages/yh_rectify_log_details/main",
+    "pages/yh_rectify_log/main",
+    "pages/yh_dispose/main",
+    "pages/yh_tell_log_details/main",
+    "pages/yh_tell_log/main",
+    "pages/yhpc_home/main",
+    "pages/team_info/main",
+    "pages/yj_details/main",    
+    "pages/jiance/main",    
+    "pages/overview/main",
+    "pages/index/main",
+    "pages/my/main",
+    "pages/jx_info/main",
+    "pages/yh_info/main",
+    "pages/register/main",
+    "pages/photo/main",
+    "pages/setting/main",
+    "pages/counter/main",
+    "pages/about/main",
+    "pages/bind_device/main"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#13b2cc",
+    "navigationBarTitleText": "妈湾电厂",
+    "navigationBarTextStyle": "white",
+    "navigationStyle": "custom"
+  }
+}

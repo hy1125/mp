@@ -1,0 +1,55 @@
+<!-- 文章组 -->
+<view class="diy-article">
+  <view class="article-item show-type__{{ item.show_type }}" wx:for="{{ dataList }}" wx:key="this" catchtap="onTargetDetail" data-id="{{ item.article_id }}">
+    <!-- 小图模式 -->
+    <block wx:if="{{ item.show_type == 10 }}">
+      <view class="article-item__left flex-box">
+        <view class="article-item__title twolist-hidden">
+          <text class="f-30 col-3">{{ item.article_title }}</text>
+        </view>
+        <view class="article-item__footer m-top10">
+          <text class="article-views f-24 col-8">{{ item.show_views }}次浏览</text>
+          <text class="article-views f-24 col-8">{{ item.like_count }}次点赞</text>
+        </view>
+      </view>
+      <view class="article-item__image">
+        <image mode="widthFix" src="{{ item.image.file_path }}"></image>
+      </view>
+    </block>
+    <!-- 大图模式 -->
+    <block wx:if="{{ item.show_type == 20 }}">
+      <view class="article-item__image">
+        <image mode="widthFix" src="{{ item.image.file_path }}"></image>
+      </view>
+      <view class="article-item__title">
+        <text class="f-30 col-3">{{ item.article_title }}</text>
+      </view>
+      <view class="article-item__content">
+        <wxs module="m1">
+          var contentStart = function(content) {
+            var start = '';
+            start = content.split('&lt;/p&gt;')[0];
+            start = start.split('&lt;p&gt;')[1];
+            return start;
+          }
+          module.exports.contentStart = contentStart;
+        </wxs>
+        <text class="">{{ m1.contentStart(item.article_content) }}</text>
+      </view>
+      <view class="article-item__footer m-top20">
+        <view class="view-like-wrap">
+          <view class="article-views">
+            <view class="icon-article-views"></view>
+            <view>{{ item.show_views }}</view>
+          </view>
+          <view class="article-likes">
+            <view class="icon-article-likes"></view>
+            <view>{{ item.like_count }}</view>
+          </view>
+        </view>
+        <view class="flex-1"></view>
+        <view class="btn-details">详情</view>
+      </view>
+    </block>
+  </view>
+</view>

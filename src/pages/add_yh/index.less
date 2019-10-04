@@ -1,0 +1,108 @@
+.add-yh-wrap {
+    width: 100%;
+    .content {
+        background: #fff;
+        box-sizing: border-box;
+        .row {
+            justify-content: center;
+            font-size: 28rpx;
+            color: #333;
+            line-height: 28rpx;
+        }
+    }
+    .explain-content {
+        padding: 0 20rpx 0 30rpx;
+        margin-bottom: 72rpx;
+        .row {
+            padding: 44rpx 0;
+            border-bottom: 2rpx solid #F5F5F5;
+            .top {
+                margin-bottom: 36rpx;
+            }
+            .bottom {
+                position: relative;
+            }
+            &:first-child,
+            &:nth-child(4),
+            &:last-child {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                p {
+                    margin-right: 30rpx;
+                }
+                input {
+                    width: 540rpx;
+                }
+                span {
+                    color: #999;
+                }
+                .choose-text {
+                    color: #333;
+                }
+            }
+        }
+    }
+    .finish-btn {
+        width: 100%;
+        height:110rpx;
+        background:rgba(255,136,30,1);
+        font-size: 30rpx;
+        color: #fff;
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+        bottom: 0;
+    }
+}
+.content,
+.table,
+.row {
+    flex-direction: column;
+}
+.picker {
+    display: flex;
+}
+.icon-downarrow {
+    color: #999;
+    font-size: 40rpx;
+    margin: 0 34rpx 0 18rpx;
+}
+
+
+page {
+    min-height: 100%;
+    background-color: #F5F5F5;
+}
+
+
+// .add-form-wrap {
+//     width: 100%;
+//     background-color: #fff;
+//     flex-direction: column;
+//     &.add-textarea-wrap {
+//         width: 100%;
+//         box-sizing: border-box;
+//         padding: 15px;
+//         .add-textarea {
+//             width: 100%;
+//             height: 100px;
+//             border: 0.5px solid #ebebeb;
+//             font-size: 14px;
+//             padding: 10px;
+//             box-sizing: border-box;
+//             border-radius: 4px;
+//             margin-bottom: 15px;
+//         }
+//         .add-textarea-text {
+//           width: 100%;
+//           min-height: 100px;
+//           font-size: 14px;
+//           padding: 10px;
+//         }
+//     }
+//   }
+//   .add-button-sumbit {
+//       width: 100%;
+//       margin: 15px 0;
+//   }

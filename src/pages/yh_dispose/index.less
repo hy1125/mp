@@ -1,0 +1,96 @@
+.yhpc-wrap {
+    width: 100%;
+    .content {
+        background: #fff;
+        box-sizing: border-box;
+        .row {
+            justify-content: center;
+            font-size: 28rpx;
+            color: #333;
+            line-height: 28rpx;
+        }
+    }
+    .dispose-content {
+        width: 700rpx;
+        margin: 37rpx 20rpx 70rpx 30rpx;
+        border-radius: 8rpx;
+        padding: 0 20rpx;
+        .row {
+            &:first-child {
+                flex-direction: row;
+                box-sizing: border-box;
+                justify-content: flex-start;
+                align-items: center;
+                height: 120rpx;
+                border-bottom: 2rpx solid #F5F5F5;
+                .left {
+                    width: 190rpx;
+                }
+                .right {
+                    color: #FF881E;
+                }
+            }
+            &:nth-child(2) {
+                height: 494rpx;
+                .top {
+                    justify-content: space-between;
+                }
+                img {
+                    height: 350rpx;
+                    width: 100%;
+                    margin-top: 30rpx;
+                }
+            }
+        }
+    }
+    .explain-content {
+        padding: 0 20rpx 0 30rpx;
+        margin-bottom: 72rpx;
+        .row {
+            padding: 44rpx 0;
+            border-bottom: 2rpx solid #F5F5F5;
+            &:nth-child(3) {
+                padding-bottom: 62rpx;
+                // .top {
+                //     color: #FF9F23;
+                // }
+            }
+            .top {
+                margin-bottom: 36rpx;
+            }
+            .bottom {
+                position: relative;
+            }
+        }
+    }
+    .explain-title {
+        font-size: 34rpx;
+        line-height: 34rpx;
+        margin: 0 0 30rpx 30rpx;
+        font-weight: 600;
+    }
+    .finish-btn {
+        width: 100%;
+        height:110rpx;
+        background:rgba(255,136,30,1);
+        font-size: 30rpx;
+        color: #fff;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+.content,
+.table,
+.row {
+    flex-direction: column;
+}
+.icon-Group {
+    font-size: 28rpx;
+    margin-top: 7rpx;
+}
+
+page {
+    min-height: 100%;
+    background-color: #F5F5F5;
+}

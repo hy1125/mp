@@ -1,0 +1,219 @@
+.overview-wrap {
+    width: 100%;
+    background-color: #F5F5F5;
+    .safety-run-wrap {
+        box-sizing: border-box;
+        width: 100%;
+        padding: 37rpx 30rpx;
+        .safety-day-count {
+            height: 404rpx;
+            width: 100%;
+            // background: linear-gradient(to bottom right, #ffab3f 20%, #ff8a20);
+            position: relative;
+            .safety-day-count-bg {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+            .safety-day-count-content {
+                width: 100%;
+                display: flex;
+                display: -webkit-flex;
+                flex-direction: column;
+                font-size: 36rpx;
+                color: #fff;
+                // align-content: center;
+                // align-items: center;
+                // justify-content: center;
+                z-index: 1;
+                >div {
+                    align-items: center;
+                    margin: 0 20rpx 0 30rpx;
+                }
+                .safety-day-count-content-day {
+                    height: 160rpx;
+                    font-size: 30rpx;
+                }
+                .safety-day-count-content-line {
+                    height:1rpx;
+                    background:rgba(255,255,255,1);
+                    opacity:0.3;
+                }
+                .safety-day-count-content-text {
+                    font-size: 24rpx;
+                    line-height: 24rpx;
+                    margin: 37rpx 0 33rpx 30rpx;
+                }
+                .overview-count-wrap {
+                    .overview-count {
+                        flex: 1;
+                        flex-direction: column;
+                        align-items: center;
+                        justify-content: between-space;
+                        position: relative;
+                        color: #fff;
+                        .count {
+                            font-size: 44rpx;
+                            font-weight: 600;
+                        }
+                        .label {
+                            font-size: 24rpx;
+                        }
+                        &:not(:last-child):after {
+                            content: '';
+                            display: block;
+                            width: 2rpx;
+                            height: 40rpx;
+                            background-color: rgba(255,255,255,.2);
+                            position: absolute;
+                            right: 0;
+                            top: 50%;
+                            transform: translateY(-50%);
+                        }
+                    }
+                }
+                .day-count {
+                    font-style: italic;
+                    font-weight: 700;
+                    font-size: 54rpx;
+                    line-height: 54rpx;
+                    margin-left: -10rpx;
+                }
+                .icon-i-safe {
+                    font-size: 30rpx;
+                    margin: 22rpx 19rpx 0 6rpx;
+                }
+            }
+        }
+    }
+    .table-wrap {
+        flex-direction: column;
+        margin-top: 40rpx;
+        position: relative;
+        .title {
+            font-size: 34rpx;
+            font-weight: 800;
+            color: #333;
+            padding-left: 32rpx;
+            margin-bottom: 44rpx;
+            margin-left: 5rpx;
+        }
+        .title-list {
+            justify-content: flex-end;
+            margin: 0 30rpx 30rpx 0;
+            
+            .title-list-count {
+                flex-direction: column;
+                margin-left: 128rpx;
+                .label {
+                    font-size: 28rpx;
+                    color: #333;
+                    font-weight: 600;
+                }
+                .count {
+                    font-size: 24rpx;
+                    color: #666;
+                }
+            }
+            .green-title {
+                &:last-child {
+                    margin-left: 113rpx;
+                    .label {
+                        justify-content: flex-end;
+                    }
+                }
+            }
+        }
+        .power-title {
+            justify-content: flex-start;
+            .title-list-count {
+                &:nth-child(1) {
+                    margin-left: 180rpx;
+                }
+            }
+            
+            
+        }
+        .table {
+            flex-direction: column;
+            width: 100%;
+            .row {
+                padding-left: 30rpx;
+                box-sizing: border-box;
+                height: 100rpx;
+                justify-content: flex-start;
+                align-items: center;
+                font-size: 26rpx;
+                color: #333;
+                .label {
+                    width: 300rpx;
+                }
+                .count {
+                    // color: #FF881E;
+                }
+                &:nth-child(odd) {
+                    background-color: #fff;
+                }
+            }
+            .green-info {
+                div {
+                    &:nth-child(1) {
+                        width: 148rpx;
+                    }
+                    &:nth-child(2) {
+                        width: 239rpx;
+                    }
+                    &:nth-child(3) {
+                        width: 284rpx;
+                    }
+                }
+            }
+            .power-data {
+                div {
+                    width: 240rpx;
+                    &:nth-child(1) {
+                        padding-left: 150rpx;
+                    }
+                }
+                &:last-child {
+                    color: #FF881E;
+                }
+            }
+            .header {
+                font-weight: 800; 
+            }
+        }
+        .power-big-title {
+            width: 180rpx;
+            position: absolute;
+            z-index: 1;
+            bottom: 0;
+            background: #Fff;
+            .row {
+                &:nth-child(odd) {
+                    background: #f5f5f5;
+                }
+            }
+            .row {
+                &:last-child {
+                    color: #FF881E;
+                }
+            }
+        }
+    }
+    .compare-wrap {
+        .count {
+            color: #FF881E;
+        }
+    }
+    .scroll-view-item_H {
+        display: inline-block;
+        
+    }
+}

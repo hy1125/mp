@@ -1,0 +1,99 @@
+.login-wrap {
+    width: 100vw;
+    height: 100vh;
+    background-color: #fff;
+    justify-content: center;
+    padding-top: 80rpx;
+    .login-content {
+        width: 100%;
+        flex-direction: column; // height: 200px;
+        .logo-icon {
+            width: 100%;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 25px;
+            i {
+                font-size: 140px;
+                color: #de913d;
+            }
+            .logo-name {
+                font-size: 20px;
+                color: #333;
+            }
+            .logo-item {
+                width: 138px;
+                height: 117px;
+                display: flex;
+                display: -webkit-flex;
+                margin-bottom: 15px;
+            }
+        }
+        .logo-input {
+            width:690rpx;
+            height:90rpx;
+            background:rgba(245,245,245,1);
+            border-radius:45rpx;
+            margin: 0 auto;
+            margin-bottom: 30rpx;
+            align-items: center;
+            .input-cell {
+                align-items: center;
+                width: 100%;
+                input {
+                    font-size: 15px;
+                    display: flex;
+                    display: -webkit-flex;
+                }
+                .send-code {
+                    font-size: 15px;
+                    color: #333;
+                    justify-content: flex-end;
+                    width: 100px;
+                    align-items: center;
+                }
+                
+            }
+            &.logo-input-password {
+                margin-bottom: 50rpx;
+                .input-cell {
+                    justify-content: space-between;
+                    >div {
+                        align-items: center;
+                    }
+                }
+            }
+            &.logo-input-btn {
+                background:rgba(255,136,30,1);
+                color: #fff;
+                font-size: 35rpx;
+                justify-content: center;
+            }
+            // &.register-btn {
+            //     justify-content: space-between;
+            //     .register,
+            //     .fotger-pwd {
+            //         font-size: 15px;
+            //         color: #333;
+            //     }
+            //     .register {}
+            //     .fotger-pwd {}
+            // }
+        }
+    }
+}
+
+.icon-suo,
+.icon-user,
+.icon-eye,
+.icon-biyan,
+.icon-delete {
+    color: #bbb;
+}
+.icon-suo,
+.icon-user {
+    margin: 0 26rpx 0 45rpx;
+}
+.icon-eye,
+.icon-biyan {
+    margin: 0 48rpx 0 38rpx;
+}

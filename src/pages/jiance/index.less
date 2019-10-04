@@ -1,0 +1,50 @@
+.jiance-wrap {
+    width: 100%;
+    background-color: #fff;
+    .table-wrap {
+        flex-direction: column;
+        .title {
+            font-size: 34rpx;
+            font-weight: 800;
+            color: #333;
+            padding-left: 32rpx;
+            margin-bottom: 30rpx;
+            margin-left: 5rpx;
+        }
+        .table {
+            flex-direction: column;
+            width: 100%;
+            .row {
+                padding-left: 30rpx;
+                box-sizing: border-box;
+                height: 120rpx;
+                justify-content: space-between;
+                align-items: center;
+                font-size: 28rpx;
+                color: #666;
+                position: relative;
+                .left {
+                    flex-direction: column;
+                    .name {
+                        font-weight: 700;
+                        color: #333;
+                    }
+                    .location {
+                        font-size: 26rpx;
+                    }
+                }
+                &:nth-child(even) {
+                    background-color: #f5f5f5;
+                }
+                div {
+                    flex: 1;
+                }
+            }
+        }
+    }
+}
+
+page {
+    min-height: 100%;
+    background-color: #fff;
+}

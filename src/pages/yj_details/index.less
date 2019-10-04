@@ -1,0 +1,73 @@
+.jiance-wrap {
+    width: 100%;
+    background-color: #fff;
+    .table-wrap {
+        flex-direction: column;
+        .title {
+            font-size: 34rpx;
+            font-weight: 800;
+            color: #333;
+            padding-left: 32rpx;
+            margin-bottom: 30rpx;
+            margin-left: 5rpx;
+        }
+        .table {
+            flex-direction: column;
+            width: 100%;
+            .row {
+                padding-left: 30rpx;
+                box-sizing: border-box;
+                height: 120rpx;
+                justify-content: space-between;
+                align-items: center;
+                font-size: 28rpx;
+                color: #666;
+                .left {
+                    width: 214rpx;
+                    .name {
+                        font-weight: 700;
+                        color: #333;
+                        font-size: 28rpx;
+                    }
+                }
+                &:nth-child(even) {
+                    background-color: #f5f5f5;
+                }
+                .right {
+                    flex: 1;
+                    color: #666;
+                }
+                &:last-child {
+                    height: 600rpx;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    .name {
+                        font-size: 34rpx;
+                        line-height: 34rpx;
+                        margin: 80rpx 0 30rpx;
+                    }
+                    img {
+                        width:689rpx;
+                        height:376rpx;
+                        border-radius:8rpx;
+                    }
+                }
+            }
+            
+        }
+    }
+    .compare-wrap {
+        .count {
+            color: #FF881E;
+        }
+    }
+    .icon-i-safe {
+        font-size: 45rpx;
+        margin-top: 14rpx;
+    }
+}
+
+page {
+    min-height: 100%;
+    background-color: #fff;
+}
