@@ -37,10 +37,11 @@ export default {
         wx.stopPullDownRefresh(); //结束刷新
     },
     methods: {
-        handleClick(item) {
-            if (item.path) {
+        handleClick(path) {
+            console.log("===="+path);
+            if (path) {
                 wx.navigateTo({
-                    url: item.path
+                    url: path
                 })
             } else {
                 wx.scanCode({

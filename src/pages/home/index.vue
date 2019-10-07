@@ -12,9 +12,37 @@
       </swiper>
       <div class="action-wrap">
         <div class="action-main">
-          <div class="aciton-item-wrap" v-for="(item, index) in actionDatas" :key="index" @click="handleClick(item)">
+          <!-- <div class="aciton-item-wrap" v-for="(item, index) in actionDatas" :key="index" @click="handleClick(item)">
             <i class="iconfont aciton-icon" :class="item.icon"></i>
             <div class="aciton-name">{{item.name}}</div>
+          </div> -->
+          <div class="aciton-item-wrap" @click="handleClick()">
+            <i class="iconfont aciton-icon icon-scan"></i>
+            <div class="aciton-name">设备扫码</div>
+          </div>
+          <div class="aciton-item-wrap" @click="handleClick('/pages/overview/main')">
+            <i class="iconfont aciton-icon icon-gailan"></i>
+            <div class="aciton-name">电厂概览</div>
+          </div>
+          <div class="aciton-item-wrap" @click="handleClick('/pages/contacts/main')">
+            <i class="iconfont aciton-icon icon-tongxunlu"></i>
+            <div class="aciton-name">通讯录</div>
+          </div>
+          <div class="aciton-item-wrap" @click="handleClick('/pages/jiance/main')">
+            <i class="iconfont aciton-icon icon-jiankong"></i>
+            <div class="aciton-name">视频监测</div>
+          </div>
+          <div class="aciton-item-wrap" @click="handleClick('/pages/team/main')">
+            <i class="iconfont aciton-icon icon-waixieguanli-"></i>
+            <div class="aciton-name">外协管理</div>
+          </div>
+          <div class="aciton-item-wrap" @click="handleClick('/pages/add_yh/main')">
+            <i class="iconfont aciton-icon icon-yinhuan-mian-"></i>
+            <div class="aciton-name">隐患上报</div>
+          </div>
+          <div class="aciton-item-wrap" @click="handleClick('/pages/yhpc_home/main')">
+            <i class="iconfont aciton-icon icon-yinhuanpaichazhilicopy"></i>
+            <div class="aciton-name">隐患排查</div>
           </div>
         </div>
       </div>

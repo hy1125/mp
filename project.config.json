@@ -10,10 +10,11 @@
 	},
 	"miniprogramRoot": "dist/wx/",
 	"compileType": "miniprogram",
-	"appid": "touristappid",
+	"appid": "wx42814629c86e80c1",
 	"projectname": "MAWAN_Power_Wechat-master%202",
 	"simulatorType": "wechat",
 	"simulatorPluginLibVersion": {},
+	"libVersion": "2.0.4",
 	"condition": {
 		"search": {
 			"current": -1,
