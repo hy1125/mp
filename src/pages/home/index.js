@@ -37,81 +37,79 @@ export default {
         wx.stopPullDownRefresh(); //结束刷新
     },
     methods: {
-        handleClick(path) {
-            console.log("===="+path);
-            if (path) {
-                wx.navigateTo({
-                    url: path
-                })
-            } else {
-                wx.scanCode({
-                    success(res) {
-                        console.log(res,"...")
+        handleClick() {
+            wx.showToast({
+                title: '扫码失败',
+                icon: 'none',
+                duration: 2000
+            });
+            wx.scanCode({
+                success(res) {
+                    console.log(res,"...")
 
-                        // wx.downloadFile({
-                        //     url: 'http://47.112.104.43/uploadfile/equipment/20190424/妈湾电厂问题清单.doc',//可以是后台传过来的路径
-                        //     success(res) {
-                        //         console.log("....",res)
-                        //         const filePath = res.tempFilePath
-                        //         wx.openDocument({
-                        //             filePath: filePath,
-                        //             fileType: "doc",
-                        //             success: function(res) {
-                        //                 console.log("1111",res)
-                        //                 //成功
-                        //             },
-                        //             fail(err) {
-                        //                 console.log("111",err)
-                        //             }
-                        //         })
-                        //     },
-                        //     fail(err) {
+                    // wx.downloadFile({
+                    //     url: 'http://47.112.104.43/uploadfile/equipment/20190424/妈湾电厂问题清单.doc',//可以是后台传过来的路径
+                    //     success(res) {
+                    //         console.log("....",res)
+                    //         const filePath = res.tempFilePath
+                    //         wx.openDocument({
+                    //             filePath: filePath,
+                    //             fileType: "doc",
+                    //             success: function(res) {
+                    //                 console.log("1111",res)
+                    //                 //成功
+                    //             },
+                    //             fail(err) {
+                    //                 console.log("111",err)
+                    //             }
+                    //         })
+                    //     },
+                    //     fail(err) {
 
-                        //     }
-                        // })
+                    //     }
+                    // })
 
-                        var url = res.result; //获取url中"?"符后的字串 
-                        var theRequest = new Object(); 
-                        let pid = ""
-                        if (url.indexOf("pid") != -1) {
-                            let index =  url.indexOf("?")
-                            url = url.slice(index)
-                            console.log("111",url)
-                           var str = url.substr(1); 
-                           let strs = str.split("&"); 
-                           for(var i = 0; i < strs.length; i ++) { 
-                              theRequest[strs[i].split("=")[0]]=decodeURI(strs[i].split("=")[1]); 
-                           } 
-                           pid = decodeURIComponent(theRequest.pid)
-                            api.getDeviceScan(`?pid=${pid}`).then(res => {
-                                console.log("扫码设备信息",res)
-                                wx.navigateTo({
-                                    url: `/pages/device_info/main?pid=${pid}&id=${res.data.id}`
-                                })
+                    var url = res.result; //获取url中"?"符后的字串 
+                    var theRequest = new Object(); 
+                    let pid = ""
+                    if (url.indexOf("pid") != -1) {
+                        let index =  url.indexOf("?")
+                        url = url.slice(index)
+                        console.log("111",url)
+                        var str = url.substr(1); 
+                        let strs = str.split("&"); 
+                        for(var i = 0; i < strs.length; i ++) { 
+                            theRequest[strs[i].split("=")[0]]=decodeURI(strs[i].split("=")[1]); 
+                        } 
+                        pid = decodeURIComponent(theRequest.pid)
+                        api.getDeviceScan(`?pid=${pid}`).then(res => {
+                            console.log("扫码设备信息",res)
+                            wx.navigateTo({
+                                url: `/pages/device_info/main?pid=${pid}&id=${res.data.id}`
                             })
-                            
-                        } else {
-                            wx.showToast({
-                              title: '扫码失败',
-                              icon: 'none',
-                              duration: 2000
-                            })
-                        }
+                        })
                         
-                    },
-                    fail(err) {
-                        console.log(err)
+                    } else {
                         wx.showToast({
                             title: '扫码失败',
                             icon: 'none',
                             duration: 2000
-                          })
-                        // wx.navigateTo({
-                        //     url: "/pages/device_introduce/main"
-                        // })
+                        })
                     }
-                });
-            }
+                    
+                },
+                fail(err) {
+                    console.log(err)
+                    wx.showToast({
+                        title: '扫码失败',
+                        icon: 'none',
+                        duration: 2000
+                        })
+                    // wx.navigateTo({
+                    //     url: "/pages/device_introduce/main"
+                    // })
+                }
+            });
         }
     },
     onLoad() {

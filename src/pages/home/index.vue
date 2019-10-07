@@ -16,34 +16,34 @@
             <i class="iconfont aciton-icon" :class="item.icon"></i>
             <div class="aciton-name">{{item.name}}</div>
           </div> -->
+          <a class="aciton-item-wrap" href='/pages/overview/main'>
+            <i class="iconfont aciton-icon icon-gailan"></i>
+            <div class="aciton-name">电厂概览</div>
+          </a>
           <div class="aciton-item-wrap" @click="handleClick()">
             <i class="iconfont aciton-icon icon-scan"></i>
             <div class="aciton-name">设备扫码</div>
           </div>
-          <div class="aciton-item-wrap" @click="handleClick('/pages/overview/main')">
-            <i class="iconfont aciton-icon icon-gailan"></i>
-            <div class="aciton-name">电厂概览</div>
-          </div>
-          <div class="aciton-item-wrap" @click="handleClick('/pages/contacts/main')">
+          <a class="aciton-item-wrap" href='/pages/contacts/main'>
             <i class="iconfont aciton-icon icon-tongxunlu"></i>
             <div class="aciton-name">通讯录</div>
-          </div>
-          <div class="aciton-item-wrap" @click="handleClick('/pages/jiance/main')">
+          </a>
+          <a class="aciton-item-wrap" href='/pages/jiance/main'>
             <i class="iconfont aciton-icon icon-jiankong"></i>
             <div class="aciton-name">视频监测</div>
-          </div>
-          <div class="aciton-item-wrap" @click="handleClick('/pages/team/main')">
+          </a>
+          <a class="aciton-item-wrap" href='/pages/team/main'>
             <i class="iconfont aciton-icon icon-waixieguanli-"></i>
             <div class="aciton-name">外协管理</div>
-          </div>
-          <div class="aciton-item-wrap" @click="handleClick('/pages/add_yh/main')">
+          </a>
+          <a class="aciton-item-wrap" href='/pages/add_yh/main'>
             <i class="iconfont aciton-icon icon-yinhuan-mian-"></i>
             <div class="aciton-name">隐患上报</div>
-          </div>
-          <div class="aciton-item-wrap" @click="handleClick('/pages/yhpc_home/main')">
+          </a>
+          <a class="aciton-item-wrap" href='/pages/yhpc_home/main'>
             <i class="iconfont aciton-icon icon-yinhuanpaichazhilicopy"></i>
             <div class="aciton-name">隐患排查</div>
-          </div>
+          </a>
         </div>
       </div>
     </div>
