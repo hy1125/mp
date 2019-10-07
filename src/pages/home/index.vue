@@ -24,9 +24,9 @@
             <i class="iconfont aciton-icon icon-scan"></i>
             <div class="aciton-name">设备扫码</div>
           </div>
-          <a class="aciton-item-wrap" href='/pages/contacts/main'>
-            <i class="iconfont aciton-icon icon-tongxunlu"></i>
-            <div class="aciton-name">通讯录</div>
+          <a class="aciton-item-wrap" href='/pages/add_yh/main'>
+            <i class="iconfont aciton-icon icon-yinhuan-mian-"></i>
+            <div class="aciton-name">隐患上报</div>
           </a>
           <a class="aciton-item-wrap" href='/pages/jiance/main'>
             <i class="iconfont aciton-icon icon-jiankong"></i>
@@ -36,9 +36,13 @@
             <i class="iconfont aciton-icon icon-waixieguanli-"></i>
             <div class="aciton-name">外协管理</div>
           </a>
-          <a class="aciton-item-wrap" href='/pages/add_yh/main'>
-            <i class="iconfont aciton-icon icon-yinhuan-mian-"></i>
-            <div class="aciton-name">隐患上报</div>
+          <a class="aciton-item-wrap" href='/pages/contacts/main'>
+            <i class="iconfont aciton-icon icon-tongxunlu"></i>
+            <div class="aciton-name">通讯录</div>
+          </a>
+          <a class="aciton-item-wrap" href='/pages/grid_management/main'>
+            <i class="iconfont aciton-icon icon-yinhuanpaichazhilicopy"></i>
+            <div class="aciton-name">网格管理</div>
           </a>
           <a class="aciton-item-wrap" href='/pages/yhpc_home/main'>
             <i class="iconfont aciton-icon icon-yinhuanpaichazhilicopy"></i>

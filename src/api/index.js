@@ -36,5 +36,8 @@ export default {
     getDeviceScan: httpPath('/api/home/scan'),
 
     // 验证身份证
-    getIdCard: httpPost('/api/home/idlogin')
+    getIdCard: httpPost('/api/home/idlogin'),
+
+    // 获取网格接口
+    getGradeList: httpPost('/api/home/gradeList')
 }
