@@ -8,8 +8,11 @@ export default {
     return {
       gridTitle: "深能妈湾一级网格",
       gridNumber: "001",
+      gridLevel: "",
       tableTitle1: "网格员",
       tableTitle2: "管辖网格",
+      tableTitle3: "网格职责",
+      introduction: "",
       list: [
         {
           name: '未带安全帽',
@@ -61,6 +64,7 @@ export default {
         // this.users = []
         this.gridTitle = res.data.superior.name;
         this.gridNumber = res.data.superior.number;
+        this.introduction = res.data.superior.introduction;
         this.operatorList[0].name = res.data.superior.operator1;
         this.operatorList[0].number = res.data.superior.phone1;
         this.operatorList[1].name = res.data.superior.operator2;
@@ -74,12 +78,28 @@ export default {
       })
     },
     handleClick() {
+      let param = "";
+      switch (this.gridLevel) {
+        case "1":
+          param = "?id=2";
+          break;
+        case "2":
+          param = "?id=3";
+          break;
+        case "3":
+          param = "?area_id=3";
+          break;
+        default:
+          break;
+      }
       wx.navigateTo({
-        url: "pages/home/main"
+        url: "../../pages/grid_management/main" + param
       })
     }
   },
-  onLoad() {
-    this.initGridDada();
+  onLoad(option) {
+    console.log("======"+option.id);
+    this.gridLevel = option.id || "1";
+    this.initGridDada(option.id);
   },
 }

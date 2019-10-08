@@ -40,7 +40,8 @@
             <i class="iconfont aciton-icon icon-tongxunlu"></i>
             <div class="aciton-name">通讯录</div>
           </a>
-          <a class="aciton-item-wrap" href='/pages/grid_management/main'>
+          <a class="aciton-item-wrap" href='/pages/grid_info/main'>
+          <!-- <a class="aciton-item-wrap" href='/pages/grid_management/main'> -->
             <i class="iconfont aciton-icon icon-yinhuanpaichazhilicopy"></i>
             <div class="aciton-name">网格管理</div>
           </a>

@@ -31,6 +31,7 @@
     "pages/counter/main",
     "pages/about/main",
     "pages/grid_management/main",
+    "pages/grid_info/main",
     "pages/bind_device/main"
   ],
   "window": {

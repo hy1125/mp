@@ -38,6 +38,9 @@ export default {
     // 验证身份证
     getIdCard: httpPost('/api/home/idlogin'),
 
+    // 二维码接口
+    getGridInfo: httpPost('/api/home/grid'),
+
     // 获取网格接口
     getGradeList: httpPost('/api/home/gradeList')
 }

@@ -29,6 +29,12 @@
           </div>
         </div>
       </div>
+      <div class="table-wrap">
+        <div class="table-title">{{tableTitle3}}</div>
+        <div class="gird-block">
+          <div class="grid-introduction">{{introduction}}</div>
+        </div>
+      </div>
     </div>
   </div>
 </template>

@@ -38,11 +38,45 @@ export default {
     },
     methods: {
         handleClick() {
-            wx.showToast({
-                title: '扫码失败',
-                icon: 'none',
-                duration: 2000
+            wx.scanCode({
+                success(res) {
+                    console.log(res,"...")
+                    var url = res.result; //获取url中"?"符后的字串 
+                    var theRequest = new Object(); 
+                    let id = ""
+                    if (url.indexOf("id") != -1) {
+                        let index =  url.indexOf("?")
+                        url = url.slice(index)
+                        console.log("111",url)
+                        var str = url.substr(1); 
+                        let strs = str.split("&"); 
+                        for(var i = 0; i < strs.length; i ++) { 
+                            theRequest[strs[i].split("=")[0]]=decodeURI(strs[i].split("=")[1]); 
+                        } 
+                        id = decodeURIComponent(theRequest.id)
+                        wx.navigateTo({
+                            url: `/pages/grid_info/main?id=${id}`
+                        })
+                    } else {
+                        wx.showToast({
+                            title: '扫码失败',
+                            icon: 'none',
+                            duration: 2000
+                        })
+                    }
+                    
+                },
+                fail(err) {
+                    console.log(err)
+                    wx.showToast({
+                        title: '扫码失败',
+                        icon: 'none',
+                        duration: 2000
+                    })
+                }
             });
+        },
+        scanCode() {
             wx.scanCode({
                 success(res) {
                     console.log(res,"...")
