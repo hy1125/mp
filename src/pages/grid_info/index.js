@@ -23,6 +23,11 @@ export default {
         delta: 1
       })
     },
+    newWorkOrder() {
+      wx.navigateTo({
+        url: "../../pages/report_hidden_danger/main?id=" + this.gridLevel
+      })
+    },
     initGridDada(id) {
       const params = {
         id: id || "1",

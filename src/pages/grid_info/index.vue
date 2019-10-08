@@ -7,7 +7,7 @@
         <div class="grid-title">{{gridTitle}}</div>
         <div class="grid-number">{{"网格编号：" + gridNumber}}</div>
       </div>
-      <a class="submit_btn" href='/pages/add_yh/main'>新建工作单</a>
+      <div class="submit_btn" @click="newWorkOrder()">新建工作单</div>
     </div>
   </div>
 </template>

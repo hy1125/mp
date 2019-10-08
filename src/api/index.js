@@ -41,6 +41,18 @@ export default {
     // 二维码接口
     getGridInfo: httpPost('/api/home/grid'),
 
+    // 隐患上传_上报人接口
+    getCheckType: httpPost('/api/home/checkType'),
+
+    // 隐患提交接口
+    getCheckDanger: httpPost('/api/home/checkDanger'),
+
+    // 处理工作单接口
+    getHandleDanger: httpPost('/api/home/handleDanger'),
+
+    // 编辑工作单接口
+    getEditHandleDanger: httpPost('/api/home/editHandleDanger'),
+
     // 获取网格接口
     getGradeList: httpPost('/api/home/gradeList')
 }
