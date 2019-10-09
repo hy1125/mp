@@ -45,6 +45,9 @@ export default {
     getCheckType: httpPost('/api/home/checkType'),
 
     // 隐患提交接口
+    getDanger: httpPost('/api/home/danger'),
+
+    // 隐患排查接口
     getCheckDanger: httpPost('/api/home/checkDanger'),
 
     // 处理工作单接口

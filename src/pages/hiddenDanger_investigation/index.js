@@ -138,7 +138,7 @@ export default {
                     }
                 }
             }
-            api.getDanger(data).then(res => {
+            api.getCheckDanger(data).then(res => {
                 console.log("上报成功",res)
                 showToast({ title: `上报成功`, icon: 'none' });
                 // if (res && res.code === 0) {

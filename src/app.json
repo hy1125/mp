@@ -33,6 +33,8 @@
     "pages/grid_management/main",
     "pages/grid_info/main",
     "pages/report_hidden_danger/main",
+    "pages/hiddenDanger_home/main",
+    "pages/hiddenDanger_investigation/main",
     "pages/bind_device/main"
   ],
   "window": {

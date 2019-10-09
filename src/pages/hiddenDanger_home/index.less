@@ -1,0 +1,107 @@
+.yhpc-wrap {
+    width: 100%;
+    .yhpc-home {
+        width: 100%;
+        box-sizing: border-box;
+        display: block;
+        .yh-number {
+            width: 100%;
+            height: 180rpx;
+            position: relative;
+            .safety-day-count-content-day {
+                z-index: 1;
+                color: #fff;
+                font-size: 28rpx;
+                align-items: center;
+                .day-count {
+                    font-style: italic;
+                    font-weight: 700;
+                    font-size: 54rpx;
+                    line-height: 54rpx;
+                    margin-left: -10rpx;
+                }
+                .icon-yinhuanpaichazhilicopy {
+                    margin: 12rpx 11rpx 0 156rpx;
+                }
+            }
+        }
+        .yh-log {
+            justify-content: space-around;
+            align-items: center;
+            width: 100%;
+            height: 120rpx;
+            >div {
+                position: relative;
+                align-items: center;
+                justify-content: center;
+                width: 35%;
+                height: 120rpx;
+                p {
+                    z-index: 1;
+                    color: #000;
+                    font-size: 30rpx;
+                    font-weight: bold;
+                }
+                p.active{
+                    border-bottom: 6rpx solid #ff881e;
+                }
+            }
+        }
+    }
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+page {
+    min-height: 100%;
+    background-color: #fff;
+}
+
+.yhpc_block{
+    width: 100%;
+    padding: 0 30rpx;
+    flex-direction: column;
+    box-sizing: border-box;
+    .yhpc_item{
+        width: 100%;
+        height: auto;
+        padding: 30rpx;
+        border-radius: 10rpx;
+        background: #f5f5f5;
+        margin-bottom: 30rpx;
+        position: relative;
+        box-sizing: border-box;
+        font-size: 28rpx;
+        .yhpc_status{
+            position: absolute;
+            top: 0;
+            left: 0;
+            padding: 10rpx 30rpx;
+            font-size: 26rpx;
+            color: #fff;
+            border-radius: 10rpx;
+            background: #ff881e;
+        }
+        .yhpc_info{
+            flex-direction: column;
+            margin-top: 50rpx;
+        }
+        >label{
+            position: absolute;
+            top: 50%;
+            right: 30rpx;
+            padding: 10rpx 30rpx;
+            font-size: 26rpx;
+            color: #fff;
+            border-radius: 10rpx;
+            background: #2C4766;
+            transform: translateY(-50%);
+        }
+    }
+}
