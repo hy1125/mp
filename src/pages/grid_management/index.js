@@ -78,22 +78,22 @@ export default {
       })
     },
     handleClick() {
-      let param = "";
+      let path = "";
       switch (this.gridLevel) {
         case "1":
-          param = "?id=2";
+          path = "../../pages/grid_management/main?id=2";
           break;
         case "2":
-          param = "?id=3";
+          path = "../../pages/grid_management/main?id=3";
           break;
         case "3":
-          param = "?area_id=3";
+          path = "../../pages/grid_info/main?area_id=3";
           break;
         default:
           break;
       }
       wx.navigateTo({
-        url: "../../pages/grid_management/main" + param
+        url: path
       })
     }
   },

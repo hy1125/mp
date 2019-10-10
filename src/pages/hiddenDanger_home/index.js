@@ -10,10 +10,10 @@ export default {
             list: [
                 {
                     "id": 1,
-                    "wid": "工作票",
-                    "waid": "工作负责人不在现场",
+                    "wid": "",
+                    "waid": "",
                     "status": 4,
-                    "status_name": "未通过"
+                    "status_name": ""
                 }
             ]
         }
@@ -64,7 +64,8 @@ export default {
             }
         }
     },
-    onLoad() {
-        this.getHiddenDangerList("1")
+    onLoad(op) {
+        let act = op.act || "1";
+        this.getHiddenDangerList(act);
     },
 }

@@ -10,38 +10,23 @@ import { dateFormat } from '@/filters';
 export default {
     data() {
         return {
-            id: '',
+            id: '',//隐患id
+            status: '',
+            notice: '',
             datas: [],
-            typeText: '选择工作单类型',
-            detailText: '选择工作单详情',
-            departmentText: '选择处置部门',
-            chooseText: '选择处置网格员',
-            danger_area: '责任网格',
-            form: {
-                type: '',          //类型
-                details: '',          //详情
-                des: '',    //隐患描述
-                name: '',         //上报人
-                department: '',     //责任部门
-                pic: [],            //隐患说明图片
-                grid_id: ''
-            },
-            typeData: {
-                typeArray: [],
-                typeIndex: 0,
-            },
-            detailData: {
-                detailArray: [],
-                detailIndex: 0,
-            },
-            departmentData: {
-                departmentArray: [],
-                departmentIndex: 0,
-            },
-            detailArrs: [],
-            multiArrs: [],
+            wid: '隐患类型',
+            waid: '隐患详情',
+            pic: '',
+            des: '隐患描述',
+            name: '上报人',
+            time: '上报时间',
+            des2: '处置说明',
+            img: '处置图片',
+            man: '处置人',
+            update_time: '处置时间',
+            chooseText: '选择处置结果',
             data: {
-                multiArray: [],
+                multiArray: ['已清除','处置中，已制定处置方案'],
                 multiIndex: 0,
             }
         }
@@ -58,89 +43,29 @@ export default {
     },
     methods: {
         handleClickHeader() {
-            this.form = {
-                name: '',
-                des: '',
-                department: ''
-            }
             wx.navigateBack({
                 delta: 1
             })
         },
-        typePickerChange(e) {
-            this.typeData.typeIndex = e.mp.detail.value
-            this.typeText = this.typeData.typeArray[e.mp.detail.value]
-            this.form.type = this.typeText
-            this.detailData.detailArray = this.detailArrs[e.mp.detail.value]
-        },
-        detailPickerChange(e) {
-            this.detailData.detailIndex = e.mp.detail.value
-            this.detailText = this.detailData.detailArray[e.mp.detail.value]
-            this.form.details = this.detailText
-        },
-        departmentPickerChange(e) {
-            this.departmentData.departmentIndex = e.mp.detail.value
-            this.departmentText = this.departmentData.departmentArray[e.mp.detail.value]
-            this.form.department = this.departmentText
-            this.data.multiArray = this.multiArrs[e.mp.detail.value]
-        },
         bindMultiPickerChange(e) {
             this.data.multiIndex = e.mp.detail.value
             this.chooseText = this.data.multiArray[e.mp.detail.value]
-            this.form.name = this.chooseText
+            // this.form.name = this.chooseText
         },
         submit() {
-            if (!this.form.des) {
-                showToast({ title: `请输入隐患描述`, icon: 'none' });
-                return false;
-            }
-            if (this.form.pic.length == 0) {
-                showToast({ title: `请上传隐患说明图片`, icon: 'none' });
-                return false;
-            }
-            if (!this.form.department) {
-                showToast({ title: `请选择责任部门`, icon: 'none' });
-                return false;
-            }
-            if (!this.form.name) {
-                showToast({ title: `请输入上报人`, icon: 'none' });
+            if (!this.des2) {
+                showToast({ title: `请输入处置说明`, icon: 'none' });
                 return false;
             }
             const self = this;
-            // const userInfo = wx.getStorageSync('userInfo')
-            // const data = {
-            //     deviceId: this.id,
-            //     report: userInfo.userName,
-            //     disposalTime: `${this.form.disposalDate} ${this.form.disposalTime}:00`,
-            //     status: 0,
-            //     kks: this.kks,
-            //     description: this.form.description
-            // }
             const data = {
-                type: this.form.type,
-                details: this.form.details,
-                des: this.form.des,
-                pic: this.form.pic[0],
-                name: this.form.name,
-                grid_id: this.form.grid_id,
-                department: this.form.department
+                id: this.id,
+                img: this.img,
+                des2: this.des2
             }
-            let imgLength = this.form.pic.length
-            if(imgLength > 1) {
-                data.source2 = this.form.pic[1]
-                if(imgLength > 2) {
-                    data.source3 = this.form.pic[2]
-                    if(imgLength > 3) {
-                        data.source4 = this.form.pic[3]
-                        if(imgLength > 4) {
-                            data.source5 = this.form.pic[4]
-                        }
-                    }
-                }
-            }
-            api.getCheckDanger(data).then(res => {
+            api.getEditHandleDanger(data).then(res => {
                 console.log("上报成功",res)
-                showToast({ title: `上报成功`, icon: 'none' });
+                showToast({ title: `提交成功`, icon: 'none' });
                 // if (res && res.code === 0) {
                 //     showToast({ title: `上报成功`, icon: 'none' });
                 //     wx.setStorageSync('addYH', true);
@@ -150,58 +75,63 @@ export default {
                 // }
             })
         },
-        getAllDepartmentList(id) {
+        getHandleDangerInfo(id) {
             const params = {
                 id: id || "1",
             }
             wx.showLoading({
                 title: '加载中',
             });
-            api.getCheckType(params).then(res => {
+            api.getHandleDanger(params).then(res => {
                 let that = this;
-                console.log("获取全部部门",res)
-                wx.hideLoading()
-                that.danger_area = res.data.area.respon
-                that.typeData.typeArray = []
-                res.data.list.forEach(item => {
-                    that.typeData.typeArray.push(item.name)
-                    let arr = [];
-                    item.son.forEach(i => {
-                        arr.push(i.details)
-                    });
-                    that.detailArrs.push(arr);
-                });
-                res.data.department.forEach(item => {
-                    that.departmentData.departmentArray.push(item.name)
-                    let arr = [];
-                    item.dep.forEach(i => {
-                        arr.push(i.operator1)
-                    });
-                    that.multiArrs.push(arr);
-                });
+                wx.hideLoading();
+                console.log("获取处置工作单数据", res)
+                that.wid = res.data.wid;
+                that.waid = res.data.waid;
+                that.pic = res.data.pic;
+                that.des = res.data.des;
+                that.name = res.data.name;
+                that.time = res.data.time;
+                that.des2 = res.data.des2;
+                that.img = res.data.img;
+                that.man = res.data.man;
+                that.update_time = res.data.update_time;
+                that.notice = res.data.notice;
+                that.status = res.data.status;
+                // that.data.multiArray = [];
+                console.log(res.data.notice);
             })
         },
         handleAddPhoto(paths,imgBase) {
             var datas = this.datas;
+            if (datas.length > 0){
+                wx.showToast({
+                    title: '您已上传过处置图片',
+                    icon: 'none',
+                    duration: 2000
+                })
+                return false;
+            }
             this.datas = datas.concat(paths);
-            this.form.pic.push(imgBase)
-            console.log("上传图片",paths,this.form.pic)
+            this.img = imgBase;
+            // this.form.pic.push(imgBase)
+            console.log("上传图片",paths,this.img)
         },
         handleDelPhoto(index) {
             var datas = this.datas;
             datas.splice(index, 1);
             this.datas = datas;
-            var imgdatas = this.form.pic;
-            imgdatas.splice(index, 1);
-            this.form.pic = imgdatas;
+            this.img = "";
+            // var imgdatas = this.form.pic;
+            // imgdatas.splice(index, 1);
+            // this.form.pic = imgdatas;
         },
         handleInput(e) {
-            this.form.des = e.mp.detail.value
+            this.des2 = e.mp.detail.value
         },
     },
     onLoad(op) {
         this.id = op.id;
-        this.form.grid_id = op.id || 1;
-        this.getAllDepartmentList(op.id)
+        this.getHandleDangerInfo(op.id);
     },
 }
