@@ -20,7 +20,7 @@ export default {
             des: '隐患描述',
             name: '上报人',
             time: '上报时间',
-            des2: '处置说明',
+            des2: '',
             img: '处置图片',
             man: '处置人',
             update_time: '处置时间',
@@ -57,10 +57,15 @@ export default {
                 showToast({ title: `请输入处置说明`, icon: 'none' });
                 return false;
             }
+            if (this.chooseText == '选择处置结果') {
+                showToast({ title: `选择处置结果`, icon: 'none' });
+                return false;
+            }
             const self = this;
             const data = {
                 id: this.id,
                 img: this.img,
+                result: this.chooseText,
                 des2: this.des2
             }
             api.getEditHandleDanger(data).then(res => {
@@ -73,6 +78,15 @@ export default {
                 //         self.handleClickHeader();
                 //     }, 1500);
                 // }
+            })
+        },
+        initiateAudit() {
+            const data = {
+                id: this.id
+            }
+            api.getEditLevelHidden(data).then(res => {
+                console.log("发起成功", res)
+                showToast({ title: `发起成功`, icon: 'none' });
             })
         },
         getHandleDangerInfo(id) {

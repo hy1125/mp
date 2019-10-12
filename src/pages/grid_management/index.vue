@@ -16,7 +16,7 @@
       <div class="table-wrap">
         <div class="table-title">{{tableTitle2}}</div>
         <div class="table">
-          <div class="row" v-for="(data, index) in list" :key="index" @click="handleClick(data)">
+          <div class="row" v-for="(data, index) in list" :key="index" @click="handleClick(data.id)">
             <img class="row-icon" src="../../../static/icons/team.png">
             <div class="left">
               <div class="name">{{ data.name }}</div>

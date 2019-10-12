@@ -18,13 +18,15 @@ export default {
           name: '未带安全帽',
           operator1: "",
           operator2: "",
-          id: '汽机房连廊入口'
+          number: '',
+          id: ''
         },
         {
           name: '翻越皮带',
           operator1: "",
           operator2: "",
-          id: '1车间'
+          number: '',
+          id: ''
         },
       ],
       operatorList: [
@@ -71,35 +73,36 @@ export default {
         this.operatorList[1].number = res.data.superior.phone2;
         res.data.subordinate.forEach((item, index) => {
           this.list[index].name = item.name;
-          this.list[index].id = item.number;
+          this.list[index].number = item.number;
+          this.list[index].id = item.id;
           this.list[index].operator1 = item.operator1;
           this.list[index].operator2 = item.operator2;
         })
       })
     },
-    handleClick() {
-      let path = "";
-      switch (this.gridLevel) {
-        case "1":
-          path = "../../pages/grid_management/main?id=2";
-          break;
-        case "2":
-          path = "../../pages/grid_management/main?id=3";
-          break;
-        case "3":
-          path = "../../pages/grid_info/main?area_id=3";
-          break;
-        default:
-          break;
-      }
+    handleClick(id) {
+      // let path = "";
+      // switch (this.gridLevel) {
+      //   case "1":
+      //     path = "../../pages/grid_management/main?id=2";
+      //     break;
+      //   case "2":
+      //     path = "../../pages/grid_management/main?id=3";
+      //     break;
+      //   case "3":
+      //     path = "../../pages/grid_info/main?area_id=3";
+      //     break;
+      //   default:
+      //     break;
+      // }
       wx.navigateTo({
-        url: path
+        url: "../../pages/grid_management/main?id=" + id
       })
     }
   },
   onLoad(option) {
     console.log("======"+option.id);
-    this.gridLevel = option.id || "1";
-    this.initGridDada(option.id);
+    this.gridLevel = option.id || "";
+    this.initGridDada(this.gridLevel);
   },
 }

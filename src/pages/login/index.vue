@@ -18,7 +18,7 @@
                     <div class="send-code" @click="sendCode">{{sendCodeText}}</div>
                 </div> -->
                 <div class="input-cell"> 
-                    <div>
+                    <div class="input-item">
                         <i class="iconfont icon-suo"></i>
                         <input v-if="passwordType == 'password'" type="password" placeholder="登陆密码" v-model="form.password"/>
                         <input v-if="passwordType == 'text'" type="text" placeholder="登陆密码" v-model="form.password"/>

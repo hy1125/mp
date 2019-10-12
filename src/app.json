@@ -41,7 +41,7 @@
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#13b2cc",
     "navigationBarTitleText": "妈湾电厂",
-    "navigationBarTextStyle": "white",
+    "navigationBarTextStyle": "black",
     "navigationStyle": "custom"
   }
 }

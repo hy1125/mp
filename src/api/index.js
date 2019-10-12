@@ -56,6 +56,9 @@ export default {
     // 编辑工作单接口
     getEditHandleDanger: httpPost('/api/home/editHandleDanger'),
 
+    // 发起审核接口
+    getEditLevelHidden: httpPost('/api/home/editLevelHidden'),
+
     // 获取网格接口
     getGradeList: httpPost('/api/home/gradeList')
 }

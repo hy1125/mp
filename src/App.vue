@@ -25,7 +25,7 @@ div {
 
 .container {
   width: 100%;
-  padding-top: 64px;
+  padding-top: 150rpx;
 }
 
 .border-bottom {

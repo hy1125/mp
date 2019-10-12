@@ -115,7 +115,7 @@
               </div>
             </div>
             <div class="finish-btn" @click="submit" v-if="status == 1 || status == 4">提交</div>
-            <div class="finish-btn" @click="submit" v-if="status == 2">发起审核</div>
+            <div class="finish-btn" @click="initiateAudit" v-if="status == 2">发起审核</div>
             <a class="finish-btn" href="/pages/hiddenDanger_home/main?act=2" v-if="status == 3">确定</a>
         </div>
     </div>
