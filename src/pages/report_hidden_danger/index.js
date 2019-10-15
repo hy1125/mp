@@ -22,6 +22,7 @@ export default {
                 details: '',          //详情
                 des: '',    //隐患描述
                 name: '',         //上报人
+                operator1: '',         //处置网格员
                 department: '',     //责任部门
                 pic: [],            //隐患说明图片
                 grid_id: ''
@@ -72,6 +73,7 @@ export default {
             this.typeText = this.typeData.typeArray[e.mp.detail.value]
             this.form.type = this.typeText
             this.detailData.detailArray = this.detailArrs[e.mp.detail.value]
+            this.detailText = "选择工作单详情";
         },
         detailPickerChange(e) {
             this.detailData.detailIndex = e.mp.detail.value
@@ -83,11 +85,12 @@ export default {
             this.departmentText = this.departmentData.departmentArray[e.mp.detail.value]
             this.form.department = this.departmentText
             this.data.multiArray = this.multiArrs[e.mp.detail.value]
+            this.chooseText = "选择处置网格员"
         },
         bindMultiPickerChange(e) {
             this.data.multiIndex = e.mp.detail.value
             this.chooseText = this.data.multiArray[e.mp.detail.value]
-            this.form.name = this.chooseText
+            this.form.operator1 = this.chooseText
         },
         submit() {
             if (!this.form.des) {
@@ -122,6 +125,7 @@ export default {
                 des: this.form.des,
                 pic: this.form.pic[0],
                 name: this.form.name,
+                operator1: this.form.operator1,
                 grid_id: this.form.grid_id,
                 department: this.form.department
             }
