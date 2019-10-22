@@ -65,12 +65,13 @@ export default {
         wx.hideLoading()
         // this.users = []
         this.gridTitle = res.data.superior.name;
-        this.gridNumber = res.data.superior.number;
         this.introduction = res.data.superior.introduction;
-        this.operatorList[0].name = res.data.superior.operator1;
-        this.operatorList[0].number = res.data.superior.phone1;
-        this.operatorList[1].name = res.data.superior.operator2;
-        this.operatorList[1].number = res.data.superior.phone2;
+        this.gridLevel = res.data.superior.grade_level_id;
+        // this.gridNumber = res.data.superior.number;
+        // this.operatorList[0].name = res.data.superior.operator1;
+        // this.operatorList[0].number = res.data.superior.phone1;
+        // this.operatorList[1].name = res.data.superior.operator2;
+        // this.operatorList[1].number = res.data.superior.phone2;
         res.data.subordinate.forEach((item, index) => {
           this.list[index].name = item.name;
           this.list[index].number = item.number;
@@ -81,20 +82,9 @@ export default {
       })
     },
     handleClick(id) {
-      // let path = "";
-      // switch (this.gridLevel) {
-      //   case "1":
-      //     path = "../../pages/grid_management/main?id=2";
-      //     break;
-      //   case "2":
-      //     path = "../../pages/grid_management/main?id=3";
-      //     break;
-      //   case "3":
-      //     path = "../../pages/grid_info/main?area_id=3";
-      //     break;
-      //   default:
-      //     break;
-      // }
+      if(this.gridLevel == "4"){
+        return false;
+      }
       wx.navigateTo({
         url: "../../pages/grid_management/main?id=" + id
       })
@@ -102,7 +92,6 @@ export default {
   },
   onLoad(option) {
     console.log("======"+option.id);
-    this.gridLevel = option.id || "";
-    this.initGridDada(this.gridLevel);
+    this.initGridDada(option.id);
   },
 }

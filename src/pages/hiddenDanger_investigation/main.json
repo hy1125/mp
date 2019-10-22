@@ -1,5 +1,5 @@
 {
     "navigationBarTitleText": "上报隐患",
-    "enablePullDownRefresh": true,
+    "enablePullDownRefresh": false,
     "backgroundTextStyle": "dark"
   }

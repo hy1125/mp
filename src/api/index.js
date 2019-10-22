@@ -60,5 +60,8 @@ export default {
     getEditLevelHidden: httpPost('/api/home/editLevelHidden'),
 
     // 获取网格接口
-    getGradeList: httpPost('/api/home/gradeList')
+    getGradeList: httpPost('/api/home/gradeList'),
+
+    // 环保数据查询接口
+    getHuanbaodata: httpPost('/api/home/huanbaodata')
 }

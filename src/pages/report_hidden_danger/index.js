@@ -21,7 +21,6 @@ export default {
                 type: '',          //类型
                 details: '',          //详情
                 des: '',    //隐患描述
-                name: '',         //上报人
                 operator1: '',         //处置网格员
                 department: '',     //责任部门
                 pic: [],            //隐患说明图片
@@ -105,8 +104,8 @@ export default {
                 showToast({ title: `请选择责任部门`, icon: 'none' });
                 return false;
             }
-            if (!this.form.name) {
-                showToast({ title: `请输入上报人`, icon: 'none' });
+            if (!this.form.operator1) {
+                showToast({ title: `选择处置网格员`, icon: 'none' });
                 return false;
             }
             const self = this;
@@ -124,7 +123,6 @@ export default {
                 details: this.form.details,
                 des: this.form.des,
                 pic: this.form.pic[0],
-                name: this.form.name,
                 operator1: this.form.operator1,
                 grid_id: this.form.grid_id,
                 department: this.form.department

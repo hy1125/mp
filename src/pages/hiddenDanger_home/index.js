@@ -22,13 +22,18 @@ export default {
         HeaderBar,
     },
     onPullDownRefresh() {
-        this.getTabDatas();
+        this.getHiddenDangerList(this.act, this.page);
+    },
+    onReachBottom() {
+        let page = this.page;
+        page++;
+        this.getHiddenDangerList(this.act, page);
     },
     methods: {
-        getHiddenDangerList(arg) {
+        getHiddenDangerList(arg, page) {
             const data = {
                 act: arg,
-                p: this.page
+                p: page
             }
             wx.showLoading({
                 title: '加载中',
@@ -53,7 +58,7 @@ export default {
         handleClick(path) {
             let that = this;
             that.act = path;
-            that.getHiddenDangerList(path);
+            that.getHiddenDangerList(path, this.page);
             switch (path) {
                 case "2":
                     that.status = "查看";
@@ -66,6 +71,7 @@ export default {
     },
     onLoad(op) {
         let act = op.act || "1";
-        this.getHiddenDangerList(act);
+        this.act = act;
+        this.getHiddenDangerList(act, this.page);
     },
 }

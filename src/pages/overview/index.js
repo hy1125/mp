@@ -1,4 +1,5 @@
 import HeaderBar from '@/components/header_bar.vue';
+import api from '@/api';
 
 export default {
     data() {
@@ -119,9 +120,47 @@ export default {
                 delta: 1
             })
         },
+        getHuanbaodata() {
+            wx.showLoading({
+                title: '加载中',
+            });
+            api.getHuanbaodata().then(res => {
+                console.log("获取隐患上报数", res)
+                let that = this;
+                that.powerDatas = [];
+                that.powerTitle = [];
+                that.productQuotas = [];
+                wx.hideLoading();
+                res.data.environmental.forEach(item => {
+                    let arr = [];
+                    arr.push(item.name);
+                    arr.push(item.two);
+                    arr.push(item.nitrogen);
+                    arr.push(item.smok);
+                    that.productQuotas.push(arr);
+                });
+                that.powerTitle.push("");
+                let dang=0, d=0, m=0, y=0;
+                res.data.electricity.forEach(item => {
+                    let powerArr = [];
+                    that.powerTitle.push(item.name);
+                    powerArr.push(item.dang);
+                    powerArr.push(item.d);
+                    powerArr.push(item.m);
+                    powerArr.push(item.y);
+                    dang += Number(item.dang);
+                    d += Number(item.d);
+                    m += Number(item.m);
+                    y += Number(item.y);
+                    that.powerDatas.push(powerArr);
+                });
+                that.powerDatas.push([dang.toFixed(2), d.toFixed(2), m.toFixed(2), y.toFixed(2)]);
+                that.powerTitle.push("合计");
+            })
+        }
     },
     onLoad() {
-        
+        this.getHuanbaodata();
     },
     
 }

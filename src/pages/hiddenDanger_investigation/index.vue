@@ -69,7 +69,7 @@
                     </picker>
                   </div>
                 </div>
-                <div class="handle_block" v-if="status == 2 || status == 3">
+                <div class="handle_block" v-if="status == 2 || status == 3 || status == 5 || status == 6">
                   <div class="row">
                     <div class="top">
                       <p>处置说明</p>
@@ -116,7 +116,7 @@
             </div>
             <div class="finish-btn" @click="submit" v-if="status == 1 || status == 4">提交</div>
             <div class="finish-btn" @click="initiateAudit" v-if="status == 2">发起审核</div>
-            <a class="finish-btn" href="/pages/hiddenDanger_home/main?act=2" v-if="status == 3">确定</a>
+            <a class="finish-btn" href="/pages/hiddenDanger_home/main?act=2" v-if="status == 3 || status == 5 || status == 6">确定</a>
         </div>
     </div>
 </template>

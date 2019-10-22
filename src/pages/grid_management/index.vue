@@ -5,16 +5,16 @@
       <div class="page-title">
         <img src="../../../static/logo.jpg"/>
         <div class="grid-title">{{gridTitle}}</div>
-        <div class="grid-number">{{"网格编号：" + gridNumber}}</div>
+        <!-- <div class="grid-number">{{"网格编号：" + gridNumber}}</div> -->
       </div>
-      <div class="table-wrap">
+      <!-- <div class="table-wrap">
         <div class="table-title">{{tableTitle1}}</div>
         <div class="gird-block">
           <div class="grid-operator" v-for="(item, operatorIndex) in operatorList" :key="operatorIndex">{{"网格员"+(operatorIndex+1)+"：" + item.name}}<i>{{item.number}}</i></div>
         </div>
-      </div>
+      </div> -->
       <div class="table-wrap">
-        <div class="table-title">{{tableTitle2}}</div>
+        <!-- <div class="table-title">{{tableTitle2}}</div> -->
         <div class="table">
           <div class="row" v-for="(data, index) in list" :key="index" @click="handleClick(data.id)">
             <img class="row-icon" src="../../../static/icons/team.png">
@@ -29,7 +29,7 @@
           </div>
         </div>
       </div>
-      <div class="table-wrap">
+      <div class="table-wrap introduction-block">
         <div class="table-title">{{tableTitle3}}</div>
         <div class="gird-block">
           <div class="grid-introduction">{{introduction}}</div>

@@ -1,5 +1,5 @@
 {
   "navigationBarTitleText": "关于妈湾电厂",
-  "enablePullDownRefresh": true,
+  "enablePullDownRefresh": false,
   "backgroundTextStyle": "dark"
 }
