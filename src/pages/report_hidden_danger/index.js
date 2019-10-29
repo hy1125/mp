@@ -10,6 +10,7 @@ import { dateFormat } from '@/filters';
 export default {
     data() {
         return {
+            statusBarHeight: HeaderBar.getStatusBarHeight(),
             id: '',
             datas: [],
             typeText: '选择工作单类型',

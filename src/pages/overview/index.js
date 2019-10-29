@@ -4,6 +4,7 @@ import api from '@/api';
 export default {
     data() {
         return {
+            h: HeaderBar.getStatusBarHeight(),
             toView: 'red',
             scrollTop: 100,
             overviewCounts: [

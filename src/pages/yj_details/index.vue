@@ -1,7 +1,7 @@
 <template>
   <div class="jiance-wrap">
     <HeaderBar title="预警详情" :iconLeft="true" :isBack="true" @clickEvent="handleClickHeader"></HeaderBar>
-    <div class="page-wrap">
+    <div class="page-wrap" :style="{paddingTop: statusBarHeight + 'px'}">
       <div class="table-wrap">
         <div class="table">
           <div class="row" v-for="(data, index) in list" :key="index">

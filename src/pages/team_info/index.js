@@ -7,6 +7,7 @@ import { qualificationFilter, dateFormat } from '@/filters';
 export default {
     data() {
         return {
+            statusBarHeight: HeaderBar.getStatusBarHeight(),
             ipconfig: apiconf.domainIp,
             teamDetail: {
                 name: "杨宇凡"

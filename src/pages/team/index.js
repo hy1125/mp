@@ -11,6 +11,7 @@ const count = 20;
 export default {
     data() {
         return {
+            statusBarHeight: HeaderBar.getStatusBarHeight(),
             datas: [],
             page: 1,
             pageCount: 1,

@@ -1,5 +1,5 @@
 <template>
-  <div class="container home-container">
+  <div class="container home-container" :style="{paddingTop: statusBarHeight + 'px'}">
     <!-- <HeaderBar title="外协员工管理" :iconLeft="true" iconClass="icon-unorderedlist" @clickEvent="handleClickHeader"></HeaderBar> -->
     <HeaderBar title="外协员工管理" :iconLeft="true" :isBack="true" @clickEvent="goBack"></HeaderBar>
     <!-- <SearchBar placeholder="搜索员工" @onInput="handleInput"></SearchBar> -->

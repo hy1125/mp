@@ -1,7 +1,7 @@
 <template>
   <div class="yhpc-wrap">
     <HeaderBar title="隐患排查单" :iconLeft="true" :isBack="true" @clickEvent="handleClickHeader"></HeaderBar>
-    <div class="page-wrap">
+    <div class="page-wrap" :style="{paddingTop: statusBarHeight + 'px'}">
         <div class="yhpc-home">
           <div class="yh-log">
             <div @click="handleClick('1')">

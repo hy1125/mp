@@ -1,7 +1,7 @@
 <template>
     <div class="team-info-wrap">
         <HeaderBar title="外协员工信息" :iconLeft="true" :isBack="true" @clickEvent="handleClickHeader"></HeaderBar>
-        <div class="page-wrap">
+        <div class="page-wrap" :style="{paddingTop: statusBarHeight + 'px'}">
             <div class="avatar-wrap">
                 <img :src="teamDetail.photos" @error="imgError">
             </div>

@@ -1,7 +1,7 @@
 <template>
   <div class="contacts-wrap">
     <HeaderBar title="通讯录" :iconLeft="true" :isBack="true" @clickEvent="handleClickHeader"></HeaderBar>
-    <div class="page-wrap">
+    <div class="page-wrap" :style="{paddingTop: statusBarHeight + 'px'}">
       <div class="top">
         <div class="tab-wrap">
           <div class="tab" v-for="(tab, index) in tabs" :key="index" :class="tab.active ? 'active' : ''" @click="switchTab(tab, index)">

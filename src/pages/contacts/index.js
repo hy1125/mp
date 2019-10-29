@@ -5,6 +5,7 @@ import apiconf from '../../api/apiconf.js';
 export default {
     data() {
         return {
+            statusBarHeight: HeaderBar.getStatusBarHeight(),
             ipconfig: apiconf.domainIp,
             typeIndex: 1,
             department: '',

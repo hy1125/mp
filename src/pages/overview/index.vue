@@ -1,7 +1,7 @@
 <template>
   <div class="overview-wrap">
     <HeaderBar title="电厂概览" :iconLeft="true" :isBack="true" @clickEvent="handleClickHeader"></HeaderBar>
-    <div class="page-wrap">
+    <div class="page-wrap" :style="{paddingTop: h + 'px'}">
       <!-- <div class="safety-run-wrap">
         <div class="safety-day-count">
           <div class="safety-day-count-bg">

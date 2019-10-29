@@ -1,7 +1,7 @@
 <template>
     <div class="add-yh-wrap">
         <HeaderBar title="上报隐患" :iconLeft="true" :isBack="true" @clickEvent="handleClickHeader"></HeaderBar>
-        <div class="page-wrap">
+        <div class="page-wrap" :style="{paddingTop: statusBarHeight + 'px'}">
             <div class="content explain-content">
               <div class="table">
                 <div class="gird-block" v-if="status == 3 || status == 4">

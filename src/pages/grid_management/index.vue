@@ -1,7 +1,7 @@
 <template>
   <div class="jiance-wrap">
     <HeaderBar title="网格管理" :iconLeft="true" :isBack="true" @clickEvent="handleClickHeader"></HeaderBar>
-    <div class="page-wrap">
+    <div class="page-wrap" :style="{paddingTop: statusBarHeight + 'px'}">
       <div class="page-title">
         <img src="../../../static/logo.jpg"/>
         <div class="grid-title">{{gridTitle}}</div>

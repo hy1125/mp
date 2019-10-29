@@ -10,6 +10,7 @@ import { dateFormat } from '@/filters';
 export default {
     data() {
         return {
+            statusBarHeight: HeaderBar.getStatusBarHeight(),
             id: '',//隐患id
             status: '',
             notice: '',

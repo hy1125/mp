@@ -6,6 +6,7 @@ import HeaderBar from '@/components/header_bar.vue';
 export default {
   data() {
     return {
+      statusBarHeight: HeaderBar.getStatusBarHeight(),
       gridTitle: "深能妈湾一级网格",
       gridNumber: "001",
       gridLevel: ""

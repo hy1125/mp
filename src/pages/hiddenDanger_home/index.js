@@ -4,6 +4,7 @@ import api from '@/api';
 export default {
     data() {
         return {
+            statusBarHeight: HeaderBar.getStatusBarHeight(),
             act: "1",
             page: 0,
             status: "立即处理",

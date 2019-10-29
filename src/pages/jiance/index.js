@@ -3,6 +3,7 @@ import HeaderBar from '@/components/header_bar.vue';
 export default {
     data() {
         return {
+            statusBarHeight: HeaderBar.getStatusBarHeight(),
             list: [
                 {
                     name: '未带安全帽',
