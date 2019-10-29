@@ -5,6 +5,7 @@ import HeaderBar from '@/components/header_bar.vue';
 export default {
     data() {
         return {
+            h: HeaderBar.getStatusBarHeight(),
             actionDatas: [
                 {
                     name: '设备扫码', icon: 'icon-scan'

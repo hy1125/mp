@@ -112,6 +112,21 @@
                     <PhotoBox :photoDatas="datas" @onAddPhoto="handleAddPhoto" @onDelPhoto="handleDelPhoto"></PhotoBox>
                   </div>
                 </div>
+
+                <div class="row" v-if="status == 2">
+                  <div class="top">
+                    <p>处置结果</p>
+                  </div>
+                  <div class="bottom">
+                    <picker @change="bindStatusPickerChange"
+                      :value="statusData.statusIndex" :range="statusData.statusArray">
+                      <view class="picker">
+                        <span :class="statusText != '选择处置结果' ? 'choose-text' : ''">{{statusText}}</span>
+                        <i class="iconfont icon-downarrow"></i>
+                      </view>
+                    </picker>
+                  </div>
+                </div>
               </div>
             </div>
             <div class="finish-btn" @click="submit" v-if="status == 1 || status == 4">提交</div>

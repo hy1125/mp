@@ -1,5 +1,5 @@
 <template>
-  <div class="container home-true-container">
+  <div class="container home-true-container" :style="{paddingTop: h + 'px'}">
     <HeaderBar title="妈湾电厂"></HeaderBar>
     <div class="page-wrap">
       <swiper class="banner-wrap" autoplay indicator-dots indicator-color="#fff">

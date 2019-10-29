@@ -21,13 +21,20 @@ export default {
             name: '上报人',
             time: '上报时间',
             des2: '',
+            hiddenStatus: 1,
+            levelStatus: 4,
             img: '处置图片',
             man: '处置人',
             update_time: '处置时间',
             chooseText: '选择处置结果',
+            statusText: '选择处置结果',
             data: {
-                multiArray: ['已清除','处置中，已制定处置方案'],
+                multiArray: ['已解决','隔离','评估'],
                 multiIndex: 0,
+            },
+            statusData: {
+                statusArray: ['初审未通过','终审通过'],
+                statusIndex: 0,
             }
         }
     },
@@ -50,7 +57,12 @@ export default {
         bindMultiPickerChange(e) {
             this.data.multiIndex = e.mp.detail.value
             this.chooseText = this.data.multiArray[e.mp.detail.value]
-            // this.form.name = this.chooseText
+            this.hiddenStatus = Number(e.mp.detail.value) + 1
+        },
+        bindStatusTextPickerChange(e) {
+            this.statusData.statusIndex = e.mp.detail.value
+            this.statusText = this.statusData.statusArray[e.mp.detail.value]
+            this.levelStatus = Number(e.mp.detail.value) + 4
         },
         submit() {
             if (!this.des2) {
@@ -66,6 +78,7 @@ export default {
                 id: this.id,
                 img: this.img,
                 result: this.chooseText,
+                status: this.hiddenStatus,
                 des2: this.des2
             }
             api.getEditHandleDanger(data).then(res => {
@@ -82,7 +95,8 @@ export default {
         },
         initiateAudit() {
             const data = {
-                id: this.id
+                id: this.id,
+                status: this.levelStatus
             }
             api.getEditLevelHidden(data).then(res => {
                 console.log("发起成功", res)

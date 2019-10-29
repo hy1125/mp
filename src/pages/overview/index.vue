@@ -2,7 +2,7 @@
   <div class="overview-wrap">
     <HeaderBar title="电厂概览" :iconLeft="true" :isBack="true" @clickEvent="handleClickHeader"></HeaderBar>
     <div class="page-wrap">
-      <div class="safety-run-wrap">
+      <!-- <div class="safety-run-wrap">
         <div class="safety-day-count">
           <div class="safety-day-count-bg">
             <img src="../../../static/overview_bg.png" alt="">
@@ -26,7 +26,7 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
       <!-- <div class="table-wrap compare-wrap">
         <div class="table">
           <div class="row" v-for="(compare, index) in compareCounts" :key="index">

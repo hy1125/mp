@@ -1,5 +1,5 @@
 <template>
-    <div class="header-bar" :style="{ backgroundColor: backgroundColor || '#fff' }">
+    <div class="header-bar" :style="{ backgroundColor: backgroundColor || '#fff', paddingTop: statusBarHeight + 'px' }">
         <div class="header-left" @click="handleClick">
             <i class="iconfont" :class="isBack ? 'icon-left' : iconClass" :style="'color: ' + iconColor" v-if="iconLeft"></i>
         </div>
@@ -9,7 +9,15 @@
 
 <script>
 export default {
+    getStatusBarHeight() {
+        return wx.getSystemInfoSync().statusBarHeight + 50
+    },
     props: ['title', 'iconLeft', 'iconClass', 'isBack', 'backgroundColor', 'iconColor'],
+    data(){
+        return {
+            statusBarHeight: wx.getSystemInfoSync().statusBarHeight, //系统状态栏高度
+        }
+    },
     methods: {
         handleClick() {
             if(this.iconLeft) this.$emit('clickEvent');
@@ -28,7 +36,7 @@ export default {
     left: 0;
     right: 0;
     z-index: 100;
-    height: 150rpx;
+    height: 100rpx;
     flex-direction: row;
     align-items: flex-end;
     .header-left {
@@ -45,7 +53,7 @@ export default {
         }
     }
     .header-center {
-        font-size: 15px;
+        font-size: 18px;
         color: #000;
         width: 100%;
         height: 50px;

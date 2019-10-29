@@ -49,11 +49,14 @@ export default {
   },
   methods: {
     handleClickHeader() {
-      wx.navigateBack({
-        delta: 1
+      // wx.navigateBack({
+      //   delta: 1
+      // })
+      wx.navigateTo({
+        url: "../../pages/home/main"
       })
     },
-    initGridDada(id) {
+    initGridData(id) {
       const params = {
         id: id || "",
       }
@@ -92,6 +95,6 @@ export default {
   },
   onLoad(option) {
     console.log("======"+option.id);
-    this.initGridDada(option.id);
+    this.initGridData(option.id);
   },
 }
