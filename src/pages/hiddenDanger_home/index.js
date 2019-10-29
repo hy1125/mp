@@ -1,4 +1,6 @@
 import HeaderBar from '@/components/header_bar.vue';
+import Loading from '@/components/loading.vue';
+import NoData from '@/components/no_data.vue';
 import api from '@/api';
 
 export default {
@@ -7,6 +9,9 @@ export default {
             statusBarHeight: HeaderBar.getStatusBarHeight(),
             act: "1",
             page: 0,
+            pageCount: 1,
+            loadMore: false,
+            needLoadMore: true,
             status: "立即处理",
             list: [
                 {
@@ -21,16 +26,33 @@ export default {
     },
     components: {
         HeaderBar,
+        Loading,
+        NoData
     },
     onPullDownRefresh() {
-        this.getHiddenDangerList(this.act, this.page);
+        wx.stopPullDownRefresh(); //结束刷新
     },
     onReachBottom() {
-        let page = this.page;
-        page++;
-        this.getHiddenDangerList(this.act, page);
+        if (this.loadMore) return;
+        this.$nextTick(() => {
+            this.loadMore = true;
+            this.loadMoreDatas();
+        });
+        // let page = this.page;
+        // page++;
+        // this.getHiddenDangerList(this.act, page);
     },
     methods: {
+        loadMoreDatas() {
+            if (this.page === this.pageCount) {
+                this.needLoadMore = false
+                showToast({ title: `暂无数据`, icon: 'none' });
+                return;
+            }
+            let page = this.page;
+            page = page + 1;
+            this.getHiddenDangerList(this.act,page);
+        },
         getHiddenDangerList(arg, page) {
             const data = {
                 act: arg,
@@ -42,7 +64,17 @@ export default {
             api.getCheckDanger(data).then(res => {
                 console.log("获取隐患上报数",res)
                 wx.hideLoading()
-                this.list = res.data.list
+                const _list = this.list;
+                let list = [];
+                if (page === 0) {
+                    list = res.data.list;
+                } else {
+                    list = _list.concat(res.data.list);
+                }
+                this.list = list;
+                this.loadMore = false;
+
+                // this.list = res.data.list
                 this.page = res.data.p
             })
         },

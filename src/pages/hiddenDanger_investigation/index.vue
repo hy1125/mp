@@ -28,7 +28,7 @@
                     <p>隐患照片</p>
                   </div>
                   <div class="bottom">
-                    <img :src="pic">
+                    <img :src="picSrc">
                   </div>
                 </div>
                 <div class="row">
@@ -83,7 +83,7 @@
                       <p>处置照片</p>
                     </div>
                     <div class="bottom">
-                      <img :src="img">
+                      <img :src="imgSrc">
                     </div>
                   </div>
                   <div class="row">

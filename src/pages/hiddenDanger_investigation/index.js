@@ -5,6 +5,7 @@ import ListCell from '@/components/list_cell.vue';
 import PhotoBox from '@/components/photo_box.vue';
 import ButtonCell from '@/components/button_cell.vue';
 import api from '@/api';
+import apiconf from '../../api/apiconf.js';
 import { dateFormat } from '@/filters';
 
 export default {
@@ -18,6 +19,7 @@ export default {
             wid: '隐患类型',
             waid: '隐患详情',
             pic: '',
+            picSrc: '',
             des: '隐患描述',
             name: '上报人',
             time: '上报时间',
@@ -25,6 +27,7 @@ export default {
             hiddenStatus: 1,
             levelStatus: 4,
             img: '处置图片',
+            imgSrc: '',
             man: '处置人',
             update_time: '处置时间',
             chooseText: '选择处置结果',
@@ -118,11 +121,13 @@ export default {
                 that.wid = res.data.wid;
                 that.waid = res.data.waid;
                 that.pic = res.data.pic;
+                that.picSrc = apiconf.domainIp + res.data.pic;
                 that.des = res.data.des;
                 that.name = res.data.name;
                 that.time = res.data.time;
                 that.des2 = res.data.des2;
                 that.img = res.data.img;
+                that.imgSrc = apiconf.domainIp + res.data.img;
                 that.man = res.data.man;
                 that.update_time = res.data.update_time;
                 that.notice = res.data.notice;

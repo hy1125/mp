@@ -119,6 +119,7 @@ export default {
             this.departmentIndex = -1
             this.users = []
             this.page = 1
+            this.pageCount = 0
             this.getStaffPhone(type,"")
 
         },
