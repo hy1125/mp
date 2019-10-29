@@ -10,7 +10,7 @@
 <script>
 export default {
     getStatusBarHeight() {
-        return wx.getSystemInfoSync().statusBarHeight + 50
+        return wx.getSystemInfoSync().statusBarHeight + 44
     },
     props: ['title', 'iconLeft', 'iconClass', 'isBack', 'backgroundColor', 'iconColor'],
     data(){
@@ -36,15 +36,15 @@ export default {
     left: 0;
     right: 0;
     z-index: 100;
-    height: 100rpx;
+    height: 88rpx;
     flex-direction: row;
     align-items: flex-end;
     .header-left {
         position: absolute;
         z-index: 100;
         left: 0;
-        height: 50px;
-        width: 50px;
+        height: 44px;
+        width: 44px;
         justify-content: center;
         align-items: center;
         i {
@@ -56,7 +56,7 @@ export default {
         font-size: 18px;
         color: #000;
         width: 100%;
-        height: 50px;
+        height: 44px;
         justify-content: center;
         align-items: center;
         font-weight: bold;
