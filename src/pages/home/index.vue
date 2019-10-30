@@ -45,7 +45,7 @@
             <div class="aciton-name">网格管理</div>
           </a>
           <a class="aciton-item-wrap" href='/pages/hiddenDanger_home/main'>
-          <!-- <a class="aciton-item-wrap" href='/pages/yhpc_home/main'> -->
+          <!-- <a class="aciton-item-wrap" href='/pages/grid_info/main'> -->
             <i class="iconfont aciton-icon icon-yinhuanpaichazhilicopy"></i>
             <div class="aciton-name">隐患排查</div>
           </a>

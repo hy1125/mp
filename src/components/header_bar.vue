@@ -3,7 +3,7 @@
         <div class="header-left" @click="handleClick">
             <i class="iconfont" :class="isBack ? 'icon-left' : iconClass" :style="'color: ' + iconColor" v-if="iconLeft"></i>
         </div>
-        <div class="header-center">{{title}}</div>
+        <div class="header-center" :style="{color: titleColor || '#000'}">{{title}}</div>
     </div>
 </template>
 
@@ -12,7 +12,7 @@ export default {
     getStatusBarHeight() {
         return wx.getSystemInfoSync().statusBarHeight + 44
     },
-    props: ['title', 'iconLeft', 'iconClass', 'isBack', 'backgroundColor', 'iconColor'],
+    props: ['title', 'iconLeft', 'iconClass', 'isBack', 'backgroundColor', 'iconColor', 'titleColor'],
     data(){
         return {
             statusBarHeight: wx.getSystemInfoSync().statusBarHeight, //系统状态栏高度

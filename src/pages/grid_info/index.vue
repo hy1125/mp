@@ -1,6 +1,6 @@
 <template>
   <div class="jiance-wrap">
-    <HeaderBar title="微网格" :iconLeft="true" :isBack="true" @clickEvent="handleClickHeader"></HeaderBar>
+    <HeaderBar title="微网格" titleColor="#fff" iconColor="#fff" :iconLeft="true" backgroundColor="#00ACFF" :isBack="true" @clickEvent="handleClickHeader"></HeaderBar>
     <div class="page-wrap" :style="{paddingTop: statusBarHeight + 'px'}">
       <div class="page-title">
         <img src="../../../static/logo.jpg"/>

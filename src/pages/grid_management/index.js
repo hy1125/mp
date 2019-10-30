@@ -76,13 +76,14 @@ export default {
         // this.operatorList[0].number = res.data.superior.phone1;
         // this.operatorList[1].name = res.data.superior.operator2;
         // this.operatorList[1].number = res.data.superior.phone2;
-        res.data.subordinate.forEach((item, index) => {
-          this.list[index].name = item.name;
-          this.list[index].number = item.number;
-          this.list[index].id = item.id;
-          this.list[index].operator1 = item.operator1;
-          this.list[index].operator2 = item.operator2;
-        })
+        this.list = res.data.subordinate;
+        // res.data.subordinate.forEach((item, index) => {
+        //   this.list[index].name = item.name;
+        //   this.list[index].number = item.number;
+        //   this.list[index].id = item.id;
+        //   this.list[index].operator1 = item.operator1;
+        //   this.list[index].operator2 = item.operator2;
+        // })
       })
     },
     handleClick(id) {
