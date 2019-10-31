@@ -11,7 +11,7 @@ export default {
       gridNumber: "001",
       gridLevel: "",
       tableTitle1: "网格员",
-      tableTitle2: "管辖网格",
+      tableTitle2: "网格员列表",
       tableTitle3: "网格职责",
       introduction: "",
       list: [

@@ -14,17 +14,18 @@
         </div>
       </div> -->
       <div class="table-wrap">
-        <!-- <div class="table-title">{{tableTitle2}}</div> -->
+        <div class="table-title">{{tableTitle2}}</div>
         <div class="table">
           <div class="row" v-for="(data, index) in list" :key="index" @click="handleClick(data.id)">
-            <img class="row-icon" src="../../../static/icons/team.png">
+            <!-- <img class="row-icon" src="../../../static/icons/team.png"> -->
             <div class="left">
               <div class="name">{{ data.name }}</div>
               <div><i>{{"网格员1：" + data.operator1}}</i><i>{{"网格员2：" + data.operator2}}</i></div>
-              <div>{{"网格编号：" + data.number }}</div>
+              <!-- <div>{{"网格编号：" + data.number }}</div> -->
             </div>
             <div class="arrow">
-                <img src="../../../static/icons/arrow.png" alt="">
+              <span>查看</span>
+                <!-- <img src="../../../static/icons/arrow.png" alt=""> -->
             </div>
           </div>
         </div>
