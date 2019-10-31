@@ -15,7 +15,7 @@
 
         <div class="yhpc_block">
           <div class="yhpc_item" v-for="(item, index) in list" :key="index">
-            <span class="yhpc_status" :style="item.status == '4' ? 'background:#999' : 'background:#ff881e'">{{item.status_name}}</span>
+            <span class="yhpc_status" :style="item.status == '1' ? 'background:#F04A50' : 'background:#009688'">{{item.status_name}}</span>
             <div class="yhpc_info">
               <p>{{"隐患类型："+item.wid}}</p>
               <p>{{"隐患详情："+item.waid}}</p>
