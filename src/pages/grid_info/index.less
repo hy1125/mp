@@ -1,132 +1,76 @@
 .jiance-wrap {
     width: 100%;
     .page-wrap{
-        width: 75vw;
-        height: 90vw;
+        width: 100%;
+        height: auto;
         background: #fff;
-        margin: 240rpx auto;
-        border-radius: 20rpx;
-        padding-top: 0;
+        p{
+            width: 100%;
+            text-align: center;
+            color: #959595;
+            font-size: 28rpx;
+            margin-top: 100rpx;
+        }
         .submit_btn{
             width: 240rpx;
-            height: 60rpx;
-            line-height: 60rpx;
-            background: #2C4766;
+            height: 68rpx;
+            line-height: 68rpx;
+            background: #0187FB;
             color: #fff;
             text-align: center;
             display: block;
-            margin: 200rpx auto 50rpx;
+            margin: 40rpx auto 50rpx;
             border-radius: 10rpx;
             font-size: 28rpx;
         }
     }
-    .table-wrap {
-        flex-direction: column;
-        width: 95vw;
-        margin: 0 auto;
-        .table-title{
-            color: #000;
-            font-weight: bold;
-            height: 65rpx;
-            line-height: 65rpx;
-            font-size: 30rpx;
-        }
-        .gird-block{
-            background-color: #F5F5F5;
-            border-radius: 8rpx;
-            padding: 20rpx 30rpx;
-            flex-direction: column;
-            .grid-operator{
-                width: 100%;
-                height: 45rpx;
-                line-height: 45rpx;
-                font-size: 28rpx;
-                color: #333;
-                i{
-                    color: #666;
-                    margin-left: 30rpx;
-                }
-            }
-            .grid-introduction{
-                width: 100%;
-                line-height: 45rpx;
-                font-size: 28rpx;
-                color: #333;
-            }
-        }
-        .title {
-            font-size: 34rpx;
-            font-weight: 800;
-            color: #333;
-            padding-left: 32rpx;
-            margin-bottom: 30rpx;
-            margin-left: 5rpx;
-        }
-        .table {
-            flex-direction: column;
-            width: 100%;
-            .row {
-                padding-left: 30rpx;
-                box-sizing: border-box;
-                height: 180rpx;
-                justify-content: space-between;
-                align-items: center;
-                font-size: 28rpx;
-                color: #666;
-                position: relative;
-                background-color: #f5f5f5;
-                margin-bottom: 20rpx;
-                border-radius: 8rpx;
-                .row-icon{
-                    width: 100rpx;
-                    height: 100rpx;
-                    margin-right: 30rpx;
-                }
-                .left {
-                    flex-direction: column;
-                    line-height: 40rpx;
-                    .name {
-                        font-weight: 700;
-                        color: #333;
-                    }
-                    .location {
-                        font-size: 26rpx;
-                    }
-                }
-                div {
-                    flex: 1;
-                    i{
-                        margin-right: 20rpx;
-                    }
-                }
-            }
-        }
-    }
 }
-
+.grid-block{
+    width: 100%;
+    height: 60vw;
+    background: #0187FB;
+    border-bottom-left-radius: 50%;
+    border-bottom-right-radius: 50%;
+}
 .page-title{
-    display: flex;
-    display: -webkit-flex;
-    justify-content: center;
-    align-items: center;
+    width: 90vw;
+    height: auto;
+    background: #fff;
+    margin: 160rpx auto 0;
+    border-radius: 20rpx;
+    box-shadow: 0px 5px 5px 3px rgba(241, 244, 247, 1);
+    padding: 30rpx;
+    box-sizing: border-box;
     flex-direction: column;
-    img{
-        width: 138px;
-        height: 117px;
-        margin: 35rpx auto 15rpx;
-    }
     .grid-title{
-        color: #000;
+        font-size: 28rpx;
+        color: #101010;
         font-weight: bold;
-        font-size: 34rpx;
     }
-    .grid-number{
-        color: #666;
-        font-size: 26rpx;
+    .grid-info{
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        padding: 20rpx 30rpx;
+        box-sizing: border-box;
+        img{
+            width: 110px;
+            height: 90px;
+        }
+        div{
+            flex-direction: column;
+            color: #101010;
+            h3{
+                font-size: 36rpx;
+            }
+            h4{
+                font-size: 28rpx;
+            }
+        }
     }
 }
 
 page {
     min-height: 100%;
-    background-color: #00ACFF;
+    background-color: #fff;
 }
