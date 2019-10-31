@@ -9,7 +9,8 @@ export default {
 <style lang="less">
 @import './styles/iconfont.css';
 body {
-  background-color: #f2f2f2;
+  background-color: #fff;
+  font-family: PingFangSC;
 }
 * {
   transition: width 2s;
