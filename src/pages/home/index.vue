@@ -24,13 +24,17 @@
             <i class="iconfont aciton-icon icon-scan"></i>
             <div class="aciton-name">设备扫码</div>
           </div>
-          <a class="aciton-item-wrap" href='/pages/add_yh/main'>
+          <a class="aciton-item-wrap" href='/pages/grid_area/main'>
+            <i class="iconfont aciton-icon icon-yinhuan-mian-"></i>
+            <div class="aciton-name">网格区域</div>
+          </a>
+          <!-- <a class="aciton-item-wrap" href='/pages/add_yh/main'>
             <i class="iconfont aciton-icon icon-yinhuan-mian-"></i>
             <div class="aciton-name">隐患上报</div>
-          </a>
+          </a> -->
           <a class="aciton-item-wrap" href='/pages/jiance/main'>
             <i class="iconfont aciton-icon icon-jiankong"></i>
-            <div class="aciton-name">视频监测</div>
+            <div class="aciton-name">安全监测</div>
           </a>
           <a class="aciton-item-wrap" href='/pages/team/main'>
             <i class="iconfont aciton-icon icon-waixieguanli-"></i>

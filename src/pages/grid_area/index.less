@@ -28,25 +28,32 @@
         .yh-log {
             position: fixed;
             left: 0;
+            z-index: 333;
             justify-content: space-around;
             align-items: center;
             width: 100%;
             height: auto;
+            padding: 0 30rpx;
+            box-sizing: border-box;
             background: #fff;
             >div {
                 position: relative;
                 align-items: center;
                 justify-content: center;
-                width: 35%;
+                width: 50%;
                 height: inherit;
-                p {
+                box-sizing: border-box;
+                label {
                     z-index: 1;
                     color: #000;
-                    font-size: 30rpx;
-                    font-weight: bold;
+                    font-size: 28rpx;
                 }
-                p.active{
-                    border-bottom: 6rpx solid #ff881e;
+                input{
+                    border: 1px solid #e6e6e6;
+                    width: 50%;
+                    font-size: 28rpx;
+                    padding-left: 20rpx;
+                    border-radius: 10rpx;
                 }
             }
         }
@@ -93,7 +100,7 @@ page {
         }
         .yhpc_info{
             flex-direction: column;
-            margin-top: 50rpx;
+            padding-right: 110rpx;
         }
         >label{
             position: absolute;

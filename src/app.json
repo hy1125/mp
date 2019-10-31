@@ -32,6 +32,7 @@
     "pages/about/main",
     "pages/grid_management/main",
     "pages/grid_info/main",
+    "pages/grid_area/main",
     "pages/report_hidden_danger/main",
     "pages/hiddenDanger_home/main",
     "pages/hiddenDanger_investigation/main",

@@ -8,19 +8,18 @@ export default {
     data() {
         return {
             statusBarHeight: HeaderBar.getStatusBarHeight(),
-            act: "1",
+            area: "",
+            number: "",
             page: 0,
-            pageCount: 1,
+            pageCount: 0,
             loadMore: false,
             needLoadMore: true,
-            status: "立即处理",
-            list: [
+            status: "进入",
+            areaList: [
                 {
                     "id": 1,
-                    "wid": "",
-                    "waid": "",
-                    "status": 4,
-                    "status_name": ""
+                    "area_3": "干煤棚基建施工工地",
+                    "number": "G001"
                 }
             ]
         }
@@ -39,9 +38,6 @@ export default {
             this.loadMore = true;
             this.loadMoreDatas();
         });
-        // let page = this.page;
-        // page++;
-        // this.getHiddenDangerList(this.act, page);
     },
     methods: {
         loadMoreDatas() {
@@ -52,31 +48,32 @@ export default {
             }
             let page = this.page;
             page = page + 1;
-            this.getHiddenDangerList(this.act,page);
+            this.getRegionLinks("", "", page);
         },
-        getHiddenDangerList(arg, page) {
+        getRegionLinks(number, area, page, clear) {
             const data = {
-                act: arg,
-                p: page
+                number: number,
+                area_3: area,
+                page: page
             }
             wx.showLoading({
                 title: '加载中',
             });
-            api.getCheckDanger(data).then(res => {
-                console.log("获取隐患上报数",res)
+            api.getRegionLinks(data).then(res => {
+                console.log("获取网格区域列表数据",res)
                 wx.hideLoading()
-                const _list = this.list;
+                const _list = this.areaList;
                 let list = [];
-                if (page === 0) {
-                    list = res.data.list;
+                if (page === 0 || clear) {
+                    list = res.data.data;
                 } else {
-                    list = _list.concat(res.data.list);
+                    list = _list.concat(res.data.data);
                 }
-                this.list = list;
+                this.areaList = list;
                 this.loadMore = false;
 
-                // this.list = res.data.list
-                this.page = res.data.p
+                this.pageCount = res.data.last_page;
+                this.page = res.data.current_page;
             })
         },
         handleClickHeader() {
@@ -89,23 +86,13 @@ export default {
                 url: "/pages/hiddenDanger_investigation/main?id="+id
             })
         },
-        handleClick(path) {
-            let that = this;
-            that.act = path;
-            that.getHiddenDangerList(path, this.page);
-            switch (path) {
-                case "2":
-                    that.status = "查看";
-                    break;
-                default:
-                    that.status = "立即处理";
-                    break;
-            }
+        searchGridArea() {
+            this.getRegionLinks(this.number, this.area, this.page, true);
         }
     },
     onLoad(op) {
         let act = op.act || "1";
         this.act = act;
-        this.getHiddenDangerList(act, this.page);
+        this.getRegionLinks("", "", this.page);
     },
 }

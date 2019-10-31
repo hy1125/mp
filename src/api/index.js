@@ -62,6 +62,9 @@ export default {
     // 获取网格接口
     getGradeList: httpPost('/api/home/gradeList'),
 
+    // 获取网格地区接口
+    getRegionLinks: httpPost('/api/home/regionlinks'),
+
     // 环保数据查询接口
     getHuanbaodata: httpPost('/api/home/huanbaodata')
 }

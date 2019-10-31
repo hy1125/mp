@@ -1,9 +1,9 @@
 <template>
   <div class="yhpc-wrap">
     <HeaderBar title="隐患排查单" :iconLeft="true" :isBack="true" @clickEvent="handleClickHeader"></HeaderBar>
-    <div class="page-wrap" :style="{paddingTop: statusBarHeight + 'px'}">
+    <div class="page-wrap" :style="{paddingTop: statusBarHeight + 50 + 'px'}">
         <div class="yhpc-home">
-          <div class="yh-log">
+          <div class="yh-log" :style="{top: statusBarHeight+'px',height: '50px'}">
             <div @click="handleClick('1')">
               <p :class="act == '1' ? 'active' : ''">待办</p>
             </div>

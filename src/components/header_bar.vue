@@ -1,9 +1,9 @@
 <template>
     <div class="header-bar" :style="{ backgroundColor: backgroundColor || '#fff', paddingTop: statusBarHeight + 'px' }">
-        <div class="header-left" @click="handleClick">
+        <div class="header-left" @click="handleClick" :style="{widht: '44px',height: '44px'}">
             <i class="iconfont" :class="isBack ? 'icon-left' : iconClass" :style="'color: ' + iconColor" v-if="iconLeft"></i>
         </div>
-        <div class="header-center" :style="{color: titleColor || '#000'}">{{title}}</div>
+        <div class="header-center" :style="{color: titleColor || '#000',height:'44px'}">{{title}}</div>
     </div>
 </template>
 
@@ -36,9 +36,10 @@ export default {
     left: 0;
     right: 0;
     z-index: 100;
-    height: 88rpx;
+    height: auto;
     flex-direction: row;
     align-items: flex-end;
+    box-sizing: content-box;
     .header-left {
         position: absolute;
         z-index: 100;
