@@ -50,7 +50,8 @@ export default {
                 sizeType: ["original", "compressed"],
                 sourceType: ["album", "camera"],
                 success(uploadRes) {
-                    let imgBase = ""
+                    let imgBase = "";
+                    self.showDelBtn = true;
                     wx.getFileSystemManager().readFile({
                       filePath: uploadRes.tempFilePaths[0], //选择图片返回的相对路径
                       encoding: 'base64', //编码格式
@@ -85,8 +86,8 @@ export default {
                 success(res) {
                     if (res.confirm) {
                         self.$emit('onDelPhoto', index);
+                        self.showDelBtn = false;
                     }
-                    self.showDelBtn = false;
                 }
             })
         }
