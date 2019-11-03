@@ -4,10 +4,10 @@
     <div class="page-wrap" :style="{paddingTop: statusBarHeight + 'px'}">
       <div class="table-wrap">
         <div class="table">
-          <div class="row" v-for="(data, index) in list" :key="index" @click="handleClick(data)">
+          <div class="row" v-for="(data, index) in list" :key="index" @click="handleClick(data.id)">
             <div class="left">
               <div class="name">{{ data.name }}</div>
-              <div>{{ data.location }}</div>
+              <div>{{ data.addree }}</div>
             </div>
             <div class="right">
               {{ data.time }}

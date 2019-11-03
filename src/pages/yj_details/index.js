@@ -1,4 +1,6 @@
 import HeaderBar from '@/components/header_bar.vue';
+import api from '@/api';
+import apiconf from '../../api/apiconf.js';
 
 export default {
     data() {
@@ -32,7 +34,7 @@ export default {
         HeaderBar,
     },
     onPullDownRefresh() {
-        this.getTabDatas();
+        wx.stopPullDownRefresh();
     },
     methods: {
         handleClickHeader() {
@@ -40,8 +42,25 @@ export default {
                 delta: 1
             })
         },
+        initiateData(id){
+            const data = {
+                id: id
+            }
+            wx.showLoading({
+                title: '加载中',
+            });
+            api.getVidedetails(data).then(res => {
+                console.log("getVidedetails发起成功", res)
+                wx.hideLoading();
+                this.list[0].location = res.data.cid;
+                this.list[1].location = res.data.time;
+                this.list[2].location = res.data.addree;
+                this.list[3].location = res.data.name;
+                this.list[4].location = apiconf.domainIp + res.data.pic_path;
+            })
+        }
     },
-    onLoad() {
-        
+    onLoad(op) {
+        this.initiateData(op.id);
     },
 }

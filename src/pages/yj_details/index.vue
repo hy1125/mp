@@ -9,7 +9,8 @@
               <div class="name">{{ data.name }}</div>
             </div>
             <div class="right">
-                <img v-if="index == 4" src="../../../static/banner@2x.png" alt="">
+                <!-- <img v-if="index == 4" src="../../../static/banner@2x.png" alt=""> -->
+                <img v-if="index == 4" :src="data.location" alt="">
                 <p v-if="index != 4">{{ data.location }}</p>
             </div>
           </div>

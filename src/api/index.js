@@ -65,6 +65,12 @@ export default {
     // 获取网格地区接口
     getRegionLinks: httpPost('/api/home/regionlinks'),
 
+    // 获取视频监测接口
+    getVidelist: httpPost('/api/home/videlist'),
+
+    // 获取预警详情接口
+    getVidedetails: httpPost('/api/home/videdetails'),
+
     // 环保数据查询接口
     getHuanbaodata: httpPost('/api/home/huanbaodata')
 }
