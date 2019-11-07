@@ -54,8 +54,8 @@ export default {
       //   delta: 1
       // })
       wx.navigateTo({
-        url: "../../pages/home/main"
-      })
+        url: "/pages/home/main"
+      });
     },
     initGridData(id) {
       const params = {
@@ -90,13 +90,10 @@ export default {
       if(this.gridLevel == "4"){
         return false;
       }
-      wx.navigateTo({
-        url: "../../pages/grid_management/main?id=" + id
-      })
+      this.initGridData(id);
     }
   },
-  onLoad(option) {
-    console.log("======"+option.id);
-    this.initGridData(option.id);
+  onLoad() {
+    this.initGridData();
   },
 }
