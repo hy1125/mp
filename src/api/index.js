@@ -71,6 +71,9 @@ export default {
     // 获取预警详情接口
     getVidedetails: httpPost('/api/home/videdetails'),
 
+    // 退出登录接口
+    signOut: httpPost('/api/home/signout'),
+
     // 环保数据查询接口
     getHuanbaodata: httpPost('/api/home/huanbaodata')
 }

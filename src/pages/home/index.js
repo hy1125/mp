@@ -38,6 +38,21 @@ export default {
         wx.stopPullDownRefresh(); //结束刷新
     },
     methods: {
+        handleClickHeader() {
+            wx.showLoading({
+                title: '处理中',
+            });
+            api.signOut().then(res => {
+                wx.hideLoading();
+                showToast({ title: res.msg, icon: 'none' });
+                if (res.status == 1){
+                    wx.clearStorageSync("laravel_session");
+                    wx.redirectTo({
+                        url: "/pages/login/main"
+                    })
+                }
+            });
+        },
         handleClick() {
             wx.scanCode({
                 success(res) {

@@ -25,7 +25,7 @@ export default {
                 operator1: '',         //处置网格员
                 department: '',     //责任部门
                 pic: [],            //隐患说明图片
-                grid_id: ''
+                grid_id: 1
             },
             typeData: {
                 typeArray: [],
@@ -60,10 +60,19 @@ export default {
     methods: {
         handleClickHeader() {
             this.form = {
-                name: '',
+                type: '',
+                details: '',
                 des: '',
-                department: ''
-            }
+                operator1: '',
+                department: '',
+                pic: [],
+                grid_id: ''
+            };
+            this.datas = [];
+            this.typeText = '选择工作单类型';
+            this.detailText = '选择工作单详情';
+            this.departmentText = '选择处置部门';
+            this.chooseText = '选择处置网格员';
             wx.navigateBack({
                 delta: 1
             })
@@ -141,15 +150,19 @@ export default {
                     }
                 }
             }
+            wx.showLoading({
+                title: '加载中',
+            });
             api.getDanger(data).then(res => {
                 console.log("上报成功",res)
+                wx.hideLoading();
                 showToast({ title: `上报成功`, icon: 'none' });
                 // if (res && res.code === 0) {
                 //     showToast({ title: `上报成功`, icon: 'none' });
                 //     wx.setStorageSync('addYH', true);
-                //     setTimeout(() => {
-                //         self.handleClickHeader();
-                //     }, 1500);
+                    setTimeout(() => {
+                        self.handleClickHeader();
+                    }, 1500);
                 // }
             })
         },
@@ -188,7 +201,7 @@ export default {
             var datas = this.datas;
             this.datas = datas.concat(paths);
             this.form.pic.push(imgBase)
-            console.log("上传图片",paths,this.form.pic)
+            console.log("上传图片", paths)
         },
         handleDelPhoto(index) {
             var datas = this.datas;
@@ -203,8 +216,23 @@ export default {
         },
     },
     onLoad(op) {
-        this.id = op.id;
-        this.form.grid_id = op.id || 1;
-        this.getAllDepartmentList(op.id)
+        var id = op.id || 1;
+        this.id = id;
+        console.log("==1=="+id);
+        this.getAllDepartmentList(id);
+        this.form = {
+            type: '',
+            details: '',
+            des: '',
+            operator1: '',
+            department: '',
+            pic: [],
+            grid_id: id
+        };
+        this.datas = [];
+        this.typeText = '选择工作单类型';
+        this.detailText = '选择工作单详情';
+        this.departmentText = '选择处置部门';
+        this.chooseText = '选择处置网格员';
     },
 }

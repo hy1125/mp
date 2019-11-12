@@ -7,7 +7,7 @@ export default {
   data() {
     return {
       statusBarHeight: HeaderBar.getStatusBarHeight(),
-      gridTitle: "深能妈湾一级网格",
+      gridTitle: "深能妈湾一级网格员管理",
       gridNumber: "001",
       gridLevel: "",
       tableTitle1: "网格员",
@@ -53,7 +53,7 @@ export default {
       // wx.navigateBack({
       //   delta: 1
       // })
-      wx.navigateTo({
+      wx.redirectTo({
         url: "/pages/home/main"
       });
     },
@@ -77,13 +77,13 @@ export default {
         // this.operatorList[1].name = res.data.superior.operator2;
         // this.operatorList[1].number = res.data.superior.phone2;
         this.list = res.data.subordinate;
-        // res.data.subordinate.forEach((item, index) => {
-        //   this.list[index].name = item.name;
-        //   this.list[index].number = item.number;
-        //   this.list[index].id = item.id;
-        //   this.list[index].operator1 = item.operator1;
-        //   this.list[index].operator2 = item.operator2;
-        // })
+        res.data.subordinate.forEach((item, index) => {
+          // this.list[index].name = item.name;
+          // this.list[index].number = item.number;
+          // this.list[index].id = item.id;
+          this.list[index].operator1 = item.operator1 || "暂无";
+          this.list[index].operator2 = item.operator2 || "暂无";
+        })
       })
     },
     handleClick(id) {

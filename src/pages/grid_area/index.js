@@ -83,7 +83,7 @@ export default {
         },
         submitHandle(id) {
             wx.navigateTo({
-                url: "/pages/hiddenDanger_investigation/main?id="+id
+                url: "/pages/grid_info/main?id="+id
             })
         },
         searchGridArea() {

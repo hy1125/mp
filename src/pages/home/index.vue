@@ -1,6 +1,6 @@
 <template>
   <div class="container home-true-container" :style="{paddingTop: h + 'px'}">
-    <HeaderBar title="妈湾电厂"></HeaderBar>
+    <HeaderBar title="妈湾电厂" leftText="注销" :iconLeft="true" @clickEvent="handleClickHeader"></HeaderBar>
     <div class="page-wrap">
       <swiper class="banner-wrap" autoplay indicator-dots indicator-color="#fff">
         <swiper-item>

@@ -1,7 +1,7 @@
 <template>
     <div class="header-bar" :style="{ backgroundColor: backgroundColor || '#fff', paddingTop: statusBarHeight + 'px' }">
         <div class="header-left" @click="handleClick" :style="{widht: '44px',height: '44px'}">
-            <i class="iconfont" :class="isBack ? 'icon-left' : iconClass" :style="'color: ' + iconColor" v-if="iconLeft"></i>
+            <i class="iconfont" :class="isBack ? 'icon-left' : iconClass" :style="'color: ' + iconColor" v-if="iconLeft">{{leftText}}</i>
         </div>
         <div class="header-center" :style="{color: titleColor || '#000',height:'44px'}">{{title}}</div>
     </div>
@@ -12,7 +12,7 @@ export default {
     getStatusBarHeight() {
         return wx.getSystemInfoSync().statusBarHeight + 44
     },
-    props: ['title', 'iconLeft', 'iconClass', 'isBack', 'backgroundColor', 'iconColor', 'titleColor'],
+    props: ['title', 'iconLeft', 'iconClass', 'isBack', 'backgroundColor', 'iconColor', 'titleColor', 'leftText'],
     data(){
         return {
             statusBarHeight: wx.getSystemInfoSync().statusBarHeight, //系统状态栏高度

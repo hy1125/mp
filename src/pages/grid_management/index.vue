@@ -1,6 +1,6 @@
 <template>
   <div class="jiance-wrap">
-    <HeaderBar title="网格管理" :iconLeft="true" :isBack="true" @clickEvent="handleClickHeader"></HeaderBar>
+    <HeaderBar title="网格员管理" :iconLeft="true" :isBack="true" @clickEvent="handleClickHeader"></HeaderBar>
     <div class="page-wrap" :style="{paddingTop: statusBarHeight + 'px'}">
       <div class="page-title">
         <img src="../../../static/logo.jpg"/>
@@ -20,7 +20,7 @@
             <!-- <img class="row-icon" src="../../../static/icons/team.png"> -->
             <div class="left">
               <div class="name">{{ data.name }}</div>
-              <div><i>{{"网格员1：" + data.operator1}}</i><i>{{"网格员2：" + data.operator2}}</i></div>
+              <div><i>{{"网格员A：" + data.operator1}}</i><i>{{"网格员B：" + data.operator2}}</i></div>
               <!-- <div>{{"网格编号：" + data.number }}</div> -->
             </div>
             <div class="arrow">

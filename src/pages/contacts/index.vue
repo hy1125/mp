@@ -22,6 +22,7 @@
           @scrolltolower="allScrollData"
           style="height: 72vh"
       >
+      <div class="noData" v-if="users.length <= 0">暂无数据</div>
         <div class="list-wrap" v-for="(item, indexs) in users" :key="indexs">
         <!-- <div class="list-wrap"> -->
           <!-- <div class="user" v-for="(user, index) in users" :key="index"> -->
