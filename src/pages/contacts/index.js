@@ -59,8 +59,9 @@ export default {
                 // this.users = []
                 this.pageCount = Math.ceil(res.data.length/50)
                 this.users[this.page - 1] = []
+                var that = this
                 res.data.forEach((item,index)=>{
-                    item.photos = `http://47.112.104.43${item.photos}`
+                    item.photos = that.ipconfig + `${item.photos}`
                     // item.photos2 = `http://47.112.104.43${item.photos}`
                     // item.photos = this.ipconfig + item.photos
                     // this.users.push(item)
@@ -122,6 +123,11 @@ export default {
             this.pageCount = 0
             this.getStaffPhone(type,"")
 
+        },
+        callPhone(phone){
+            wx.makePhoneCall({
+                phoneNumber: phone
+            })
         },
         departmentChange(e) {
             const { detail } = e.mp;

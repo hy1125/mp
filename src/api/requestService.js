@@ -44,8 +44,8 @@ const Http = (path, method, domain, bHandleError) => {
                     console.log("......",path)
                     let res = response.data;
                     if (res.status != 1) {
-                        // showToast({ title: `${res.error}`, icon: 'none' });
-                        showToast({ title: `暂无数据`, icon: 'none' });
+                        showToast({ title: `${res.msg}`, icon: 'none' });
+                        // showToast({ title: `暂无数据`, icon: 'none' });
                         // if (res.code == 5) {
                         //     showToast({ title: '用户会话状态已过期，请重新登录', icon: 'none' });
                         //     wx.redirectTo({

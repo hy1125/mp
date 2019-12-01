@@ -38,7 +38,7 @@
                 <div class="department">
                   {{ user.department }}
                 </div>
-                <div class="phone">
+                <div class="phone" @click="callPhone(user.phone)">
                   <i class="iconfont icon-phone"></i>
                   <span>{{ user.phone }}</span>
                 </div>

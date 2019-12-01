@@ -23,7 +23,7 @@ export default {
             ],
             greenDatas: [
                 {
-                    label: '二氧化碳',
+                    label: '二氧化硫',
                     count: "mg/m3"
                 },
                 {

@@ -56,7 +56,7 @@ export default {
                 this.list[1].location = res.data.time;
                 this.list[2].location = res.data.addree;
                 this.list[3].location = res.data.name;
-                this.list[4].location = apiconf.domainIp + res.data.pic_path;
+                this.list[4].location = "http://mw.aqfwy.cn:6" + res.data.pic_path;
             })
         }
     },
