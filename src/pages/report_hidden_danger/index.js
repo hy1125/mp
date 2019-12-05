@@ -37,6 +37,7 @@ export default {
             },
             departmentData: {
                 departmentArray: [],
+                departmentIdArray: [],
                 departmentIndex: 0,
             },
             detailArrs: [],
@@ -92,6 +93,7 @@ export default {
         departmentPickerChange(e) {
             this.departmentData.departmentIndex = e.mp.detail.value
             this.departmentText = this.departmentData.departmentArray[e.mp.detail.value]
+            this.form.grid_id = this.departmentData.departmentIdArray[e.mp.detail.value]
             this.form.department = this.departmentText
             this.data.multiArray = this.multiArrs[e.mp.detail.value]
             this.chooseText = "选择处置网格员"
@@ -188,7 +190,8 @@ export default {
                     that.detailArrs.push(arr);
                 });
                 res.data.department.forEach(item => {
-                    that.departmentData.departmentArray.push(item.name)
+                    that.departmentData.departmentArray.push(item.name);
+                    that.departmentData.departmentIdArray.push(item.id);
                     let arr = [];
                     item.dep.forEach(i => {
                         arr.push(i.operator1)
@@ -227,7 +230,7 @@ export default {
             operator1: '',
             department: '',
             pic: [],
-            grid_id: id
+            grid_id: 1
         };
         this.datas = [];
         this.typeText = '选择工作单类型';
