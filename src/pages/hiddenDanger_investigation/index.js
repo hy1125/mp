@@ -168,4 +168,7 @@ export default {
         this.id = op.id;
         this.getHandleDangerInfo(op.id);
     },
+    onShow(){
+        this.datas = [];
+    }
 }

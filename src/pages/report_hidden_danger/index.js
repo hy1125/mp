@@ -37,12 +37,13 @@ export default {
             },
             departmentData: {
                 departmentArray: [],
-                departmentIdArray: [],
                 departmentIndex: 0,
             },
             detailArrs: [],
             multiArrs: [],
+            userIdArr: [],
             data: {
+                userIdArray: [],
                 multiArray: [],
                 multiIndex: 0,
             }
@@ -93,14 +94,15 @@ export default {
         departmentPickerChange(e) {
             this.departmentData.departmentIndex = e.mp.detail.value
             this.departmentText = this.departmentData.departmentArray[e.mp.detail.value]
-            this.form.grid_id = this.departmentData.departmentIdArray[e.mp.detail.value]
             this.form.department = this.departmentText
             this.data.multiArray = this.multiArrs[e.mp.detail.value]
+            this.data.userIdArray = this.userIdArr[e.mp.detail.value]
             this.chooseText = "选择处置网格员"
         },
         bindMultiPickerChange(e) {
             this.data.multiIndex = e.mp.detail.value
             this.chooseText = this.data.multiArray[e.mp.detail.value]
+            this.form.grid_id = this.data.userIdArray[e.mp.detail.value]
             this.form.operator1 = this.chooseText
         },
         submit() {
@@ -191,11 +193,12 @@ export default {
                 });
                 res.data.department.forEach(item => {
                     that.departmentData.departmentArray.push(item.name);
-                    that.departmentData.departmentIdArray.push(item.id);
-                    let arr = [];
+                    let arr = [],idArr = [];
                     item.dep.forEach(i => {
                         arr.push(i.operator1)
+                        idArr.push(i.id);
                     });
+                    that.userIdArr.push(idArr);
                     that.multiArrs.push(arr);
                 });
             })
