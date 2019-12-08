@@ -1,11 +1,11 @@
 <template>
     <div class="add-yh-wrap">
-        <HeaderBar title="上报隐患" :iconLeft="true" :isBack="true" @clickEvent="handleClickHeader"></HeaderBar>
+        <HeaderBar title="处理隐患" :iconLeft="true" :isBack="true" @clickEvent="handleClickHeader"></HeaderBar>
         <div class="page-wrap" :style="{paddingTop: statusBarHeight + 'px'}">
             <div class="content explain-content">
               <div class="table">
                 <div class="gird-block" v-if="status == 3 || status == 4">
-                  <div class="grid-notice">审核结果：<i>{{notice}}</i></div>
+                  <div class="grid-notice">审核结果：<i>{{notice || "暂无"}}</i></div>
                 </div>
                 <div class="row">
                   <div class="top">
@@ -113,7 +113,7 @@
                   </div>
                 </div>
 
-                <div class="row" v-if="status == 2">
+                <!-- <div class="row" v-if="status == 2">
                   <div class="top">
                     <p>处置结果</p>
                   </div>
@@ -126,11 +126,15 @@
                       </view>
                     </picker>
                   </div>
-                </div>
+                </div> -->
               </div>
             </div>
             <div class="finish-btn" @click="submit" v-if="status == 1 || status == 4">提交</div>
-            <div class="finish-btn" @click="initiateAudit" v-if="status == 2">发起审核</div>
+            <!-- <div class="finish-btn" @click="initiateAudit" v-if="status == 2">发起审核</div> -->
+            <div class="btn_block"v-if="status == 2">
+              <div class="btn" @click="initiateAudit(3)">通过</div>
+              <div class="btn" @click="initiateAudit(4)">不通过</div>
+            </div>
             <a class="finish-btn" href="/pages/hiddenDanger_home/main?act=2" v-if="status == 3 || status == 5 || status == 6">确定</a>
         </div>
     </div>

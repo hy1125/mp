@@ -13,6 +13,7 @@ export default {
         return {
             statusBarHeight: HeaderBar.getStatusBarHeight(),
             id: '',//隐患id
+            addPhotoFlag: false,
             status: '',
             notice: '',
             datas: [],
@@ -77,7 +78,7 @@ export default {
                 showToast({ title: `选择处置结果`, icon: 'none' });
                 return false;
             }
-            const self = this;
+            const that = this;
             const data = {
                 id: this.id,
                 img: this.img,
@@ -88,6 +89,9 @@ export default {
             api.getEditHandleDanger(data).then(res => {
                 console.log("上报成功",res)
                 showToast({ title: `提交成功`, icon: 'none' });
+                setTimeout(() => {
+                    that.handleClickHeader();
+                }, 1500);
                 // if (res && res.code === 0) {
                 //     showToast({ title: `上报成功`, icon: 'none' });
                 //     wx.setStorageSync('addYH', true);
@@ -97,14 +101,23 @@ export default {
                 // }
             })
         },
-        initiateAudit() {
+        initiateAudit(status) {
+            let that = this;
             const data = {
                 id: this.id,
-                status: this.levelStatus
+                // status: this.levelStatus
+                status: status
             }
             api.getEditLevelHidden(data).then(res => {
-                console.log("发起成功", res)
-                showToast({ title: `发起成功`, icon: 'none' });
+                console.log("发起成功", res);
+                wx.showToast({
+                    title: '发起成功',
+                    icon: 'none',
+                    duration: 1500
+                })
+                setTimeout(() => {
+                    that.handleClickHeader();
+                }, 1500);
             })
         },
         getHandleDangerInfo(id) {
@@ -137,6 +150,7 @@ export default {
             })
         },
         handleAddPhoto(paths,imgBase) {
+            this.addPhotoFlag = true;
             var datas = this.datas;
             if (datas.length > 0){
                 wx.showToast({
@@ -166,9 +180,12 @@ export default {
     },
     onLoad(op) {
         this.id = op.id;
+        this.addPhotoFlag = false;
         this.getHandleDangerInfo(op.id);
     },
     onShow(){
-        this.datas = [];
+        if (!this.addPhotoFlag){
+            this.datas = [];
+        }
     }
 }
