@@ -1,6 +1,6 @@
 <template>
     <div class="add-yh-wrap">
-        <HeaderBar title="处理隐患" :iconLeft="true" :isBack="true" @clickEvent="handleClickHeader"></HeaderBar>
+        <HeaderBar title="处置隐患" :iconLeft="true" :isBack="true" @clickEvent="handleClickHeader"></HeaderBar>
         <div class="page-wrap" :style="{paddingTop: statusBarHeight + 'px'}">
             <div class="content explain-content">
               <div class="table">
@@ -69,7 +69,7 @@
                     </picker>
                   </div>
                 </div>
-                <div class="handle_block" v-if="status == 2 || status == 3 || status == 5 || status == 6">
+                <div class="handle_block" v-if="status == 2 || status == 3 || status == 5">
                   <div class="row">
                     <div class="top">
                       <p>处置说明</p>
@@ -103,7 +103,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="row" v-if="status == 1 || status == 4">
+                <div class="row" v-if="status == 1 || status == 4 || status == 6">
                   <div class="top">
                     <p>处置说明（选填）</p>
                   </div>
@@ -129,13 +129,13 @@
                 </div> -->
               </div>
             </div>
-            <div class="finish-btn" @click="submit" v-if="status == 1 || status == 4">提交</div>
+            <div class="finish-btn" @click="submit" v-if="status == 1 || status == 4 || status == 6">提交</div>
             <!-- <div class="finish-btn" @click="initiateAudit" v-if="status == 2">发起审核</div> -->
             <div class="btn_block"v-if="status == 2">
               <div class="btn" @click="initiateAudit(3)">通过</div>
               <div class="btn" @click="initiateAudit(4)">不通过</div>
             </div>
-            <a class="finish-btn" href="/pages/hiddenDanger_home/main?act=2" v-if="status == 3 || status == 5 || status == 6">确定</a>
+            <a class="finish-btn" href="/pages/hiddenDanger_home/main?act=2" v-if="status == 3 || status == 5">确定</a>
         </div>
     </div>
 </template>
