@@ -41,12 +41,13 @@ export default {
         wx.hideLoading()
         this.gridTitle = res.data.list.area_3;
         this.gridNumber = res.data.list.number;
+        this.gridLevel = res.data.list.id;
       })
     },
   },
   onLoad(option) {
     console.log("======"+option.id);
-    this.gridLevel = option.id || "1";
+    // this.gridLevel = option.id || "1";
     this.initGridDada(option.id);
   },
 }

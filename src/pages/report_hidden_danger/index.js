@@ -139,6 +139,7 @@ export default {
                 pic: this.form.pic[0],
                 operator1: this.form.operator1,
                 grid_id: this.form.grid_id,
+                id: this.id,
                 department: this.form.department
             }
             let imgLength = this.form.pic.length

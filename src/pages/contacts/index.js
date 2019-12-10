@@ -95,7 +95,7 @@ export default {
 
         },
         imgError(indexs,index) {
-            // this.users[indexs][index].photos = this.users[indexs][index].photos2
+            this.users[indexs][index].photos = '/static/avatar.png'
             // console.log("...",this.users[indexs][index].photos,this.users[indexs][index].photos2)
         },
         getAllDepartmentList() {

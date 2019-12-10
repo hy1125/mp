@@ -9,7 +9,7 @@
               <input type="text" v-model="number" v-on:input="searchGridArea"/>
             </div>
             <div>
-              <label>网格区域：</label>
+              <label>网格名称：</label>
               <input type="text" v-model="area" v-on:input="searchGridArea"/>
             </div>
           </div>
@@ -18,7 +18,7 @@
         <div class="yhpc_block">
           <div class="yhpc_item" v-for="(item, index) in areaList" :key="index">
             <div class="yhpc_info">
-              <p>{{"网格区域："+item.area_3}}</p>
+              <p>{{"网格名称："+item.area_3}}</p>
               <p>{{"网格编号："+item.number}}</p>
             </div>
             <label @click="submitHandle(item.id)">{{status}}</label>

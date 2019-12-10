@@ -27,7 +27,7 @@ export default {
                     count: "mg/m3"
                 },
                 {
-                    label: '氦氧化物',
+                    label: '氮氧化物',
                     count: "mg/m3"
                 },
                 {
