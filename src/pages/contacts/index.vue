@@ -11,11 +11,17 @@
         <!-- <div class="filter" @click="switchDepartment">
           
         </div> -->
-        <picker mode="selector" @change="departmentChange" :value="departmentIndex" :range="departments">
+        <!-- <picker mode="selector" @change="departmentChange" :value="departmentIndex" :range="departments">
           <view class="filter">
             {{ departments[departmentIndex] || '筛选部门'}}
           </view>
-        </picker>
+        </picker> -->
+        <div class="search">
+            <div>
+              <i class="iconfont icon-icon-seach-no"></i>
+              <input @confirm="searchStaff" placeholder="请输入搜索内容" confirm-type="search" />
+            </div>
+        </div>
       </div>
       <scroll-view
           scroll-y 
@@ -32,15 +38,15 @@
             </div>
             <div class="info-wrap">
               <div class="name">
-                {{ user.name }}
+                {{ user.name || '无' }}
               </div>
               <div class="bottom">
                 <div class="department">
-                  {{ user.department }}
+                  {{ user.department || '无' }}
                 </div>
                 <div class="phone" @click="callPhone(user.phone)">
                   <i class="iconfont icon-phone"></i>
-                  <span>{{ user.phone }}</span>
+                  <span>{{ user.phone || '无' }}</span>
                 </div>
               </div>
             </div>

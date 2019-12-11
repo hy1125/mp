@@ -19,14 +19,15 @@
         </div>
         <div>
             <i class="iconfont icon-icon-seach-no"></i>
-            <input @confirm="searchStaff" placeholder="搜索员工姓名或工号" confirm-type="search" />
+            <input @confirm="searchStaff" placeholder="请输入搜索内容" confirm-type="search" />
         </div>
     </div>
     <div class="list-wrap border-top border-bottom" v-if="datas.length > 0">
       <div v-for="(item, index) in datas" :key="index">
         <DoubleList 
           :title="item.name" 
-          :label="item.qualification" 
+          :label="item.company"
+          :tips="item.qualification"
           :isLink="true" 
           :noBorder="index === datas.length - 1"
           @onPress="goDetail(item)"></DoubleList>

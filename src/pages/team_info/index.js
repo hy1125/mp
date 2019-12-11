@@ -48,6 +48,7 @@ export default {
             api.getCooperatorInfoDetails(params).then(res => {
                 console.log("获取外协员工的详细信息",res)
                 this.teamDetail = res.data
+                this.keepDetail = res.data.gate
                 this.teamDetail.photos2 = "http://47.112.104.43"  + this.teamDetail.photos
                 this.teamDetail.photos = this.ipconfig + this.teamDetail.photo
             })

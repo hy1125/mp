@@ -32,8 +32,8 @@
             <div class="team-info-keep-content">
                 <div v-for="(item, index) in keepDetail" :key="index">
                     <p>{{item.time}}</p>
-                    <p>{{item.place}}</p>
-                    <p>{{item.state}}</p>
+                    <p>{{item.gate}}</p>
+                    <p>{{item.jinchu}}</p>
                 </div>
             </div>
         </div>

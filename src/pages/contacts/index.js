@@ -40,6 +40,17 @@ export default {
         this.getTabDatas();
     },
     methods: {
+        searchStaff(e) {
+            console.log("搜索的字", e.mp.detail)
+            // this.form.staffName = ""
+            // this.form.staffNumber = ""
+            // if (/.*[\u4e00-\u9fa5]+.*$/.test(e.mp.detail.value)) {
+            //     this.form.staffName = e.mp.detail.value
+            // } else {
+            //     this.form.staffNumber = e.mp.detail.value
+            // }
+            this.getStaffPhone(this.typeIndex, e.mp.detail.value)
+        },
         getStaffPhone(type,department) {
             const params = {
                 type: type || 1,
@@ -61,7 +72,14 @@ export default {
                 this.users[this.page - 1] = []
                 var that = this
                 res.data.forEach((item,index)=>{
-                    item.photos = that.ipconfig + `${item.photos}`
+                    if(item.photo){
+                        item.photos = that.ipconfig + `${item.photo}`
+                    } else {
+                        item.photos = that.ipconfig + `${item.photos}`
+                    }
+                    if(type == 1){
+                        item.department = item.company
+                    }
                     // item.photos2 = `http://47.112.104.43${item.photos}`
                     // item.photos = this.ipconfig + item.photos
                     // this.users.push(item)

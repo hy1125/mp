@@ -6,6 +6,7 @@
                 <div class="list-lable">{{label}}</div>
             </div>
             <div class="arrow">
+                <div class="list-tips">{{tips}}</div>
                 <img src="../../static/icons/arrow.png" alt="">
             </div>
         </div>
@@ -14,7 +15,7 @@
 
 <script>
 export default {
-  props: ["title", "label", "value", "isLink", "noBorder"],
+  props: ["title", "label", "value", "isLink", "noBorder","tips"],
   computed: {
       subTitile() {
           return `${this.title.substring(0, 10)}...`;
@@ -60,6 +61,26 @@ export default {
             .list-lable {
                 font-size: 12px;
                 color: #333;
+            }
+        }
+        .arrow {
+            position: absolute;
+            right: 30rpx;
+            top: 50%;
+            transform: translateY(-50%);
+            width: auto;
+            height: 40rpx;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            .list-tips{
+                margin-right: 10rpx;
+                color: #999;
+                font-size: 12px;
+            }
+            img {
+                width: 12rpx;
+                height: 22rpx;
             }
         }
     }
