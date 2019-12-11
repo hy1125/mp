@@ -19,7 +19,7 @@
         <div class="search">
             <div>
               <i class="iconfont icon-icon-seach-no"></i>
-              <input @confirm="searchStaff" placeholder="请输入搜索内容" confirm-type="search" />
+              <input @confirm="searchStaff" :placeholder="searchPlaceholder" confirm-type="search" />
             </div>
         </div>
       </div>

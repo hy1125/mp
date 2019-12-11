@@ -7,6 +7,7 @@ export default {
         return {
             statusBarHeight: HeaderBar.getStatusBarHeight(),
             ipconfig: apiconf.domainIp,
+            searchPlaceholder: "请输入姓名或单位查询",
             typeIndex: 1,
             department: '',
             pageCount: 0,
@@ -41,14 +42,6 @@ export default {
     },
     methods: {
         searchStaff(e) {
-            console.log("搜索的字", e.mp.detail)
-            // this.form.staffName = ""
-            // this.form.staffNumber = ""
-            // if (/.*[\u4e00-\u9fa5]+.*$/.test(e.mp.detail.value)) {
-            //     this.form.staffName = e.mp.detail.value
-            // } else {
-            //     this.form.staffNumber = e.mp.detail.value
-            // }
             this.getStaffPhone(this.typeIndex, e.mp.detail.value)
         },
         getStaffPhone(type,department) {
@@ -139,6 +132,11 @@ export default {
             this.users = []
             this.page = 1
             this.pageCount = 0
+            if (type == 1) {
+                this.searchPlaceholder = "请输入姓名或单位查询";
+            } else {
+                this.searchPlaceholder = "请输入姓名或部门查询";
+            }
             this.getStaffPhone(type,"")
 
         },

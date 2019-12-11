@@ -19,7 +19,7 @@
         </div>
         <div>
             <i class="iconfont icon-icon-seach-no"></i>
-            <input @confirm="searchStaff" placeholder="请输入搜索内容" confirm-type="search" />
+            <input @confirm="searchStaff" placeholder="请输入姓名或工号或单位名称查询" confirm-type="search" />
         </div>
     </div>
     <div class="list-wrap border-top border-bottom" v-if="datas.length > 0">

@@ -51,14 +51,16 @@ export default {
     },
     methods: {
         searchStaff(e) {
-            console.log("搜索的字",e.mp.detail)
-            this.form.staffName = ""
-            this.form.staffNumber = ""
-            if(/.*[\u4e00-\u9fa5]+.*$/.test(e.mp.detail.value)){ 
-                this.form.staffName = e.mp.detail.value
-            } else{
-                this.form.staffNumber = e.mp.detail.value
-            }
+            // console.log("搜索的字",e.mp.detail)
+            // this.form.staffName = ""
+            // this.form.staffNumber = ""
+            // if(/.*[\u4e00-\u9fa5]+.*$/.test(e.mp.detail.value)){ 
+            //     this.form.staffName = e.mp.detail.value
+            // } else{
+            //     this.form.staffNumber = e.mp.detail.value
+            // }
+            this.form.company = ""
+            this.form.company = e.mp.detail.value
             this.getDataList()
         },
         getDataList() {
