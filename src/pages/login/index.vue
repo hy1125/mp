@@ -9,7 +9,7 @@
             <div class="logo-input">
                 <div class="input-cell">
                     <i class="iconfont icon-user"></i>
-                    <input type="text" placeholder="工号" v-model="form.phone"/>
+                    <input type="text" placeholder="手机号或姓名" v-model="form.phone"/>
                 </div>
             </div>
             <div class="logo-input logo-input-password">
@@ -20,8 +20,8 @@
                 <div class="input-cell"> 
                     <div class="input-item">
                         <i class="iconfont icon-suo"></i>
-                        <input v-if="passwordType == 'password'" type="password" placeholder="登陆密码" v-model="form.password"/>
-                        <input v-if="passwordType == 'text'" type="text" placeholder="登陆密码" v-model="form.password"/>
+                        <input v-if="passwordType == 'password'" type="password" placeholder="登录密码" v-model="form.password"/>
+                        <input v-if="passwordType == 'text'" type="text" placeholder="登录密码" v-model="form.password"/>
                     </div>
                     <div v-if="form.password ==''">
                         <i class="iconfont icon-eye"></i>
