@@ -41,7 +41,6 @@
             </div> -->
             <!-- <ButtonCell text="登录" padding="padding: 0 40px" @onPress="login"></ButtonCell> -->
         </div>
-        </div>
     </div>
 </template>
 
