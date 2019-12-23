@@ -14,6 +14,7 @@
           </div>
         </div>
       </div>
+      <img :src="imgSrc">
       <p>发现隐患？点击按钮上报隐患</p>
       <div class="submit_btn" @click="newWorkOrder()">上报隐患</div>
     </div>

@@ -9,6 +9,7 @@ export default {
       statusBarHeight: HeaderBar.getStatusBarHeight(),
       gridTitle: "深能妈湾一级网格",
       gridNumber: "001",
+      imgSrc: "",
       gridLevel: ""
     }
   },
@@ -42,6 +43,7 @@ export default {
         this.gridTitle = res.data.list.area_3;
         this.gridNumber = res.data.list.number;
         this.gridLevel = res.data.list.id;
+        this.imgSrc = apiconf.domainIp + res.data.list.img;
       })
     },
   },
