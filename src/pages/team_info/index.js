@@ -41,6 +41,11 @@ export default {
                 delta: 1
             })
         },
+        goToPhoto(e){
+            wx.navigateTo({
+                url: '/pages/photo/main?path=' + this.teamDetail.photos
+            });
+        },
         getCooperatorInfo() {
             const params = {
                 id: this.id

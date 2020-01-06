@@ -131,7 +131,7 @@
             </div>
             <div class="finish-btn" @click="submit" v-if="status == 1 || status == 4 || status == 6">提交</div>
             <!-- <div class="finish-btn" @click="initiateAudit" v-if="status == 2">发起审核</div> -->
-            <div class="btn_block"v-if="status == 2">
+            <div class="btn_block" v-if="status == 2">
               <div class="btn" @click="initiateAudit(3)">通过</div>
               <div class="btn" @click="initiateAudit(4)">不通过</div>
             </div>
